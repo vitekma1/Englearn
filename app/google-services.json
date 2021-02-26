@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "827143049442",
+    "project_id": "englearn-2d2d0",
+    "storage_bucket": "englearn-2d2d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827143049442:android:1f88f545388a9b70724ebb",
+        "android_client_info": {
+          "package_name": "com.englearn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827143049442-goaa3mh6jvnqj5u9fsp1kpjsctmpk5g6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK7-wW131cim7fMFazGeHDmPWdRCZtH4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827143049442-goaa3mh6jvnqj5u9fsp1kpjsctmpk5g6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "827143049442-qb5suuk7thdvo31mbsa6pofpbk5sk1e3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.englearn",
+            "certificate_hash": "dbfa4c9ac4db8a5da6fdf2ef72beb94cb84be13c"
+          }
+        },
+        {
           "client_id": "827143049442-goaa3mh6jvnqj5u9fsp1kpjsctmpk5g6.apps.googleusercontent.com",
           "client_type": 3
         }

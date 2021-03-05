@@ -10,12 +10,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import static com.google.firebase.auth.FirebaseUser.*;
 
 public class HomeActivity extends AppCompatActivity {
     Button btnLogout;
@@ -28,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         tvTest = findViewById(R.id.textView2);
+        String email,uid;
         btnLogout = findViewById(R.id.logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,13 +57,36 @@ public class HomeActivity extends AppCompatActivity {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                tvTest.setText(value);
+               // tvTest.setText(value);
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
                 Log.w("test", "Failed to read value.", error.toException());
+            }
+        });
+
+        //ziskani emailu a id prihlaseneho uzivatele
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+             email = user.getEmail();
+             uid = user.getUid();
+        }
+        else{
+            email = "error";
+            uid = "error";
+        }
+
+        tvTest.setText("Přihlášený uživatel: "+email);
+
+        Button btnImages = (Button)findViewById(R.id.btnImages);
+
+        btnImages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, ImageRecognition.class));
+                finish();
             }
         });
     }

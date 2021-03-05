@@ -4,28 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".ImageRecognition"
     android:background="@drawable/bc1">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="325dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="25dp"
+            android:textAlignment="center"
+            app:srcCompat="@drawable/lion" />
+
+        <TextView
+            android:id="@+id/tvTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:text="Napište anglický název zvířete"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/emailId"
+            android:id="@+id/animalId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="130dp"
             android:layout_marginEnd="55dp"
             android:layout_marginBottom="33dp"
             android:ems="10"
-            android:hint="Email"
+            android:hint="Název"
             android:inputType="textEmailAddress"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#FFFFFF"
@@ -33,25 +52,8 @@
             android:textColorLink="#FFFFFF"
             android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="55dp"
-            android:layout_marginBottom="42dp"
-            android:ems="10"
-            android:hint="Heslo"
-            android:inputType="textPassword"
-            android:textColor="#FFFFFF"
-            android:textColorHighlight="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:textColorLink="#FFFFFF"
-            android:textSize="24sp" />
-
         <Button
-            android:id="@+id/btnSignUp"
+            android:id="@+id/btnCheck"
             style="@android:style/Widget.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,22 +61,22 @@
             android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
             android:fontFamily="sans-serif-black"
             android:padding="12dp"
-            android:text="Registrovat se"
+            android:text="Zkontrolovat"
             android:textAlignment="center"
             android:textSize="24dp" />
 
-        <TextView
-            android:id="@+id/tvSignIn"
+        <Button
+            android:id="@+id/btnMenu"
+            style="@android:style/Widget.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="65dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="65dp"
-            android:text="Máte již účet? Přihlaste se zde"
+            android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+            android:fontFamily="sans-serif-black"
+            android:padding="12dp"
+            android:text="Menu"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:textSize="24dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

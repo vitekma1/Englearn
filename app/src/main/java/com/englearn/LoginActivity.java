@@ -75,7 +75,10 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.makeText(LoginActivity.this, "Login Error, prosím zkuste to znovu", Toast.LENGTH_SHORT).show();
                                     }
                                     else{
+                                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                        String uid = user.getUid();
                                         Intent intToHome = new Intent(LoginActivity.this, HomeActivity.class);
+                                        intToHome.putExtra("UID", uid);
                                         startActivity(intToHome);
                                     }
                                 }

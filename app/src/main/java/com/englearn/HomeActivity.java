@@ -27,13 +27,14 @@ public class HomeActivity extends AppCompatActivity {
     TextView tvTest;
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
-
+    private String email,uid;
+    Button btnImages;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         tvTest = findViewById(R.id.textView2);
-        String email,uid;
+        btnImages = findViewById(R.id.btnImages);
         btnLogout = findViewById(R.id.logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,11 +45,21 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //ziskani emailu a id prihlaseneho uzivatele
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            email = user.getEmail();
+            uid = user.getUid();
+        }
+        else{
+            email = "error";
+            uid = "error";
+        }
+
+        tvTest.setText("Přihlášený uživatel: "+email);
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("test");
-
-        myRef.setValue("Testovací hodnota");
+        DatabaseReference myRef = database.getReference(uid+"animals1");
 
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
@@ -58,6 +69,9 @@ public class HomeActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                // tvTest.setText(value);
+                if (value!=null){
+                if( value.equals("done")){
+                btnImages.setText("Zvířata - hotovo");}}
             }
 
             @Override
@@ -67,27 +81,18 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        //ziskani emailu a id prihlaseneho uzivatele
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-             email = user.getEmail();
-             uid = user.getUid();
-        }
-        else{
-            email = "error";
-            uid = "error";
-        }
 
-        tvTest.setText("Přihlášený uživatel: "+email);
 
-        Button btnImages = (Button)findViewById(R.id.btnImages);
 
         btnImages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (btnImages.getText().equals("Zvířata - hotovo")){
+                }else{
                 startActivity(new Intent(HomeActivity.this, ImageRecognition.class));
-                finish();
+                finish();}
             }
         });
+
     }
 }

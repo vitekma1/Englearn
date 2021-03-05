@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity"
-    android:background="@drawable/bc1">
+    android:background="@drawable/p6">
 
 
     <LinearLayout
@@ -26,6 +26,7 @@
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
+
 
         <Button
             android:id="@+id/btnImages"

@@ -28,13 +28,14 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String email,uid;
-    Button btnImages;
+    Button btnImages, btnGrammar1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         tvTest = findViewById(R.id.textView2);
         btnImages = findViewById(R.id.btnImages);
+        btnGrammar1 = findViewById(R.id.btnGrammar1);
         btnLogout = findViewById(R.id.logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +82,29 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        // Write a message to the database
+        DatabaseReference myRefG = database.getReference(uid+"grammar1");
+
+        // Read from the database
+        myRefG.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                    if( value.equals("done")){
+                        btnGrammar1.setText("Gramatika - hotovo");}}
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
+            }
+        });
+
 
 
 
@@ -91,6 +115,16 @@ public class HomeActivity extends AppCompatActivity {
                 }else{
                 startActivity(new Intent(HomeActivity.this, ImageRecognition.class));
                 finish();}
+            }
+        });
+
+        btnGrammar1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (btnGrammar1.getText().equals("Gramatika - hotovo")){
+                }else{
+                    startActivity(new Intent(HomeActivity.this, GrammarActivity.class));
+                    finish();}
             }
         });
 

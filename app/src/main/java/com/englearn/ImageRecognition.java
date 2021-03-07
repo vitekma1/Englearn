@@ -20,6 +20,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ImageRecognition extends AppCompatActivity {
     EditText animalId;
     Button btnCheck;
@@ -40,6 +43,7 @@ public class ImageRecognition extends AppCompatActivity {
         tvTask = findViewById(R.id.tvTask);
         imageView = findViewById(R.id.imageView);
         btnCheck = findViewById(R.id.btnCheck);
+
         btnCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

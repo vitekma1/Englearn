@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity"
-    android:background="@drawable/p6">
+    android:background="@drawable/p2">
 
 
     <LinearLayout
@@ -13,58 +13,212 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="65dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="65dp"
-            android:layout_marginBottom="161dp"
-            android:text="Welcome"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/btnImages"
-            style="@android:style/Widget.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-            android:fontFamily="sans-serif-black"
-            android:padding="12dp"
-            android:text="Obrázky"
-            android:textAlignment="center"
-            android:textSize="24dp" />
-        <Button
-            android:id="@+id/btnGrammar1"
-            style="@android:style/Widget.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-            android:fontFamily="sans-serif-black"
-            android:padding="12dp"
-            android:text="Gramatika"
-            android:textAlignment="center"
-            android:textSize="24dp" />
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginEnd="65dp"
+                    android:layout_marginBottom="161dp"
+                    android:text="Welcome"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    />
 
-        <Button
-            android:id="@+id/logout"
-            style="@android:style/Widget.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-            android:fontFamily="sans-serif-black"
-            android:padding="12dp"
-            android:text="Odhlásit se"
-            android:textAlignment="center"
-            android:textSize="24dp" />
+                <Button
+                    android:id="@+id/btnImages"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/menu_button"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="Obrázky"
+                    android:textAlignment="center"
+                    android:textSize="24dp" />
+
+                <Button
+                    android:id="@+id/btnGrammar1"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/menu_button"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="Gramatika"
+                    android:textAlignment="center"
+                    android:textSize="24dp"
+
+                    android:layout_marginBottom="7dp"/>
+
+                <Button
+                    android:id="@+id/btnImages2"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/menu_button"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="qqqqqqq"
+                    android:textAlignment="center"
+                    android:textSize="24dp"
+
+                    android:layout_marginBottom="7dp"/>
+
+                <Button
+                    android:id="@+id/btnImages3"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/menu_button"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="qqqqqqq"
+                    android:textAlignment="center"
+                    android:textSize="24dp"
+
+                    android:layout_marginBottom="7dp"/>
+
+                <Button
+                    android:id="@+id/btnImages4"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/menu_button"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="qqqqqqq"
+                    android:textAlignment="center"
+                    android:textSize="24dp"
+
+                    android:layout_marginBottom="7dp"/>
+
+                <Button
+                    android:id="@+id/btnImages5"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/menu_button"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="qqqqqqq"
+                    android:textAlignment="center"
+                    android:textSize="24dp"
+
+                    android:layout_marginBottom="7dp"/>
+
+                <Button
+                    android:id="@+id/btnImages6"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/menu_button"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="qqqqqqq"
+                    android:textAlignment="center"
+                    android:textSize="24dp"
+
+                    android:layout_marginBottom="7dp"/>
+
+                <Button
+                    android:id="@+id/btnImages7"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/menu_button"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="qqqqqqq"
+                    android:textAlignment="center"
+                    android:textSize="24dp"
+
+                    android:layout_marginBottom="7dp"/>
+
+                <Button
+                    android:id="@+id/btnImages8"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/menu_button"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="qqqqqqq"
+                    android:textAlignment="center"
+                    android:textSize="24dp"
+
+                    android:layout_marginBottom="7dp"/>
+
+                <Button
+                    android:id="@+id/btnImages9"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/menu_button"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="qqqqqqq"
+                    android:textAlignment="center"
+                    android:textSize="24dp"
+
+                    android:layout_marginBottom="7dp"/>
+
+                <Button
+                    android:id="@+id/btnImages10"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/menu_button"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="qqqqqqq"
+                    android:textAlignment="center"
+                    android:textSize="24dp"
+
+                    android:layout_marginBottom="7dp"/>
+
+                <Button
+                    android:id="@+id/logout"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:background="@drawable/menu_button"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="Odhlásit se"
+                    android:textAlignment="center"
+                    android:textSize="24dp"
+
+                    android:layout_marginBottom="7dp"/>
+            </LinearLayout>
+        </ScrollView>
+
 
     </LinearLayout>
 

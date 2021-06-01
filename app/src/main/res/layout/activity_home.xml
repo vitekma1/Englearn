@@ -30,12 +30,37 @@
                     android:layout_marginStart="65dp"
                     android:layout_marginTop="22dp"
                     android:layout_marginEnd="65dp"
-                    android:layout_marginBottom="161dp"
+                    android:layout_marginBottom="50dp"
                     android:text="Welcome"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
-                    android:textSize="24sp"
-                    />
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginEnd="65dp"
+                    android:text="Celkové skóre"
+                    android:textAlignment="center"
+                    android:textColor="#FFEB3B"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginEnd="65dp"
+                    android:layout_marginBottom="25dp"
+                    android:text="tvScore"
+                    android:textAlignment="center"
+                    android:textColor="#FFEB3B"
+                    android:textSize="20sp" />
 
                 <Button
                     android:id="@+id/btnImages"
@@ -216,6 +241,7 @@
                     android:textSize="24dp"
 
                     android:layout_marginBottom="7dp"/>
+
             </LinearLayout>
         </ScrollView>
 

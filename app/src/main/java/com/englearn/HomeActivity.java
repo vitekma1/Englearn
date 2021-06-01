@@ -24,7 +24,7 @@ import static com.google.firebase.auth.FirebaseUser.*;
 
 public class HomeActivity extends AppCompatActivity {
     Button btnLogout;
-    TextView tvTest;
+    TextView tvTest, tvScore;
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String email,uid;
@@ -34,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         tvTest = findViewById(R.id.textView2);
+        tvScore = findViewById(R.id.tvScore);
         btnImages = findViewById(R.id.btnImages);
         btnGrammar1 = findViewById(R.id.btnGrammar1);
         btnLogout = findViewById(R.id.logout);
@@ -96,6 +97,32 @@ public class HomeActivity extends AppCompatActivity {
                 if (value!=null){
                     if( value.equals("done")){
                         btnGrammar1.setText("Gramatika - hotovo");}}
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
+            }
+        });
+
+        // Write a message to the database
+        DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
+
+        // Read from the database
+        myRefScore.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                        tvScore.setText(value);}else{
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
+                    myRefScore.setValue("0");
+                }
             }
 
             @Override

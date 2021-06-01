@@ -23,6 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Integer.parseInt;
+
 public class ImageRecognition extends AppCompatActivity {
     EditText animalId;
     Button btnCheck;
@@ -30,7 +32,7 @@ public class ImageRecognition extends AppCompatActivity {
     ImageView imageView;
     int steps = 1;
     FirebaseAuth mFirebaseAuth;
-    private String uid;
+    private String uid, valueScore;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private boolean complete = false;
     @Override
@@ -175,10 +177,33 @@ public class ImageRecognition extends AppCompatActivity {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference(uid+"animals1");
                     myRef.setValue("done");
+                    DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
+                    int score = parseInt(valueScore)+100;
+                    myRefScore.setValue(String.valueOf(score));
 
                 }
                 startActivity(new Intent(ImageRecognition.this, HomeActivity.class));
                 finish();
+            }
+        });
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
+        myRefScore.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                    valueScore = value;}
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
             }
         });
     }

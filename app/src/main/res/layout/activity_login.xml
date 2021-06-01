@@ -16,12 +16,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="33dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:text="Přihlášení"
+            android:textColor="#FFFFFF"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textColorLink="#FFFFFF"
+            android:textSize="36sp" />
+
         <EditText
             android:id="@+id/emailId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="55dp"
             android:layout_marginBottom="33dp"
             android:ems="10"

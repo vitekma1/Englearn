@@ -3,6 +3,7 @@ package com.englearn;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,18 +13,23 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.lang.Integer.parseInt;
 
 public class GrammarActivity extends AppCompatActivity {
 
     Button btnA1,btnA2,btnA3,btnA4;
     int steps = 1;
     FirebaseAuth mFirebaseAuth;
-    private String uid;
+    private String uid, valueScore;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private boolean complete = false;
     TextView tvTask,tvSentence;
@@ -283,10 +289,32 @@ public class GrammarActivity extends AppCompatActivity {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRef = database.getReference(uid+"grammar1");
                     myRef.setValue("done");
+                    DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
+                    int score = parseInt(valueScore)+10;
+                    myRefScore.setValue(String.valueOf(score));
 
                 }
                 startActivity(new Intent(GrammarActivity.this, HomeActivity.class));
                 finish();
+            }
+        });
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
+        myRefScore.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                    valueScore = value;}
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
             }
         });
     }

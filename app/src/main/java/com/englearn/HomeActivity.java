@@ -33,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String email,uid;
-    Button btnImages, btnGrammar1;
+    Button btnImages, btnGrammar1, btnScore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +41,7 @@ public class HomeActivity extends AppCompatActivity {
         tvTest = findViewById(R.id.textView2);
         tvScore = findViewById(R.id.tvScore);
         btnImages = findViewById(R.id.btnImages);
+        btnScore = findViewById(R.id.btnScore);
         btnGrammar1 = findViewById(R.id.btnGrammar1);
 
         btnLogout = findViewById(R.id.logout);
@@ -158,6 +159,13 @@ public class HomeActivity extends AppCompatActivity {
                 }else{
                     startActivity(new Intent(HomeActivity.this, GrammarActivity.class));
                     finish();}
+            }
+        });
+        btnScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    startActivity(new Intent(HomeActivity.this, ScoreActivity.class));
+                    finish();
             }
         });
 

@@ -92,19 +92,19 @@
                     android:layout_marginBottom="7dp"/>
 
                 <Button
-                    android:id="@+id/btnImages2"
+                    android:id="@+id/btnScore"
                     style="@android:style/Widget.Button"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:background="@drawable/menu_button"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/menu_button"
                     android:fontFamily="sans-serif-black"
                     android:padding="12dp"
-                    android:text="qqqqqqq"
+                    android:text="Skóre"
                     android:textAlignment="center"
-                    android:textSize="24dp"
 
-                    android:layout_marginBottom="7dp"/>
+                    android:textSize="24dp" />
 
                 <Button
                     android:id="@+id/btnImages3"

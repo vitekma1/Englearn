@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Englearn</string>
     <string name="help">Nápověda pro obrázky, Nápověda pro gramatiku, Nápověda text Nápověda text Nápověda text Nápověda text Nápověda text Nápověda text Nápověda text Nápověda text Nápověda text Nápověda text Nápověda text</string>
+    <string name="title_activity_scoreboard">ScoreboardActivity</string>
 </resources>

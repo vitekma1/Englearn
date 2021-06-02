@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GrammarActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" ></activity>
+        <activity android:name=".ScoreActivity"></activity>
+        <activity
+            android:name=".ScoreboardActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".GrammarActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ImageRecognition"
             android:theme="@style/Theme.AppCompat.NoActionBar" />

@@ -9,9 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ScoreActivity"></activity>
         <activity
-            android:name=".ScoreboardActivity"
+            android:name=".ScoreActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".GrammarActivity"

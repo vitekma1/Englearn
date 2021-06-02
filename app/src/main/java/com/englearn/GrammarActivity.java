@@ -4,10 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +31,7 @@ import static java.lang.Integer.parseInt;
 
 public class GrammarActivity extends AppCompatActivity {
 
-    Button btnA1,btnA2,btnA3,btnA4;
+    Button btnA1,btnA2,btnA3,btnA4,btnPopUp;
     int steps = 1;
     FirebaseAuth mFirebaseAuth;
     private String uid, valueScore;
@@ -37,7 +42,7 @@ public class GrammarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grammar);
-
+        btnPopUp = findViewById(R.id.btnPopUp);
         mFirebaseAuth = FirebaseAuth.getInstance();
         tvTask = findViewById(R.id.tvTask);
         tvSentence = findViewById(R.id.tvSentence);
@@ -316,6 +321,35 @@ public class GrammarActivity extends AppCompatActivity {
                 // Failed to read value
                 Log.w("test", "Failed to read value.", error.toException());
             }
+        });
+
+        btnPopUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // inflate the layout of the popup window
+                LayoutInflater inflater = (LayoutInflater)
+                        getSystemService(LAYOUT_INFLATER_SERVICE);
+                View popupView = inflater.inflate(R.layout.popup_window, null);
+
+                // create the popup window
+                int width = LinearLayout.LayoutParams.WRAP_CONTENT;
+                int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                boolean focusable = true; // lets taps outside the popup also dismiss it
+                final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+                // show the popup window
+                // which view you pass in doesn't matter, it is only used for the window tolken
+                popupWindow.showAtLocation(v, Gravity.CENTER, 0, 0);
+                // dismiss the popup window when touched
+                popupView.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        popupWindow.dismiss();
+                        return true;
+                    }
+                });}
+
         });
     }
 }

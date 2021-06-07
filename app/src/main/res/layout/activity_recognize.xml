@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecognizeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#2A2D44"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvHeadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="5dp"
+            android:text="Vyslovte správně slovo:"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="70dp"
+            android:text="welcome"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="65dp"
+            android:layout_marginEnd="65dp"
+            android:layout_marginBottom="20dp"
+            android:text="result"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button"
+            style="@android:style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+            android:fontFamily="sans-serif-black"
+            android:onClick="getSpeechInput"
+            android:padding="12dp"
+            android:text="Začít mluvit"
+            android:textAlignment="center"
+            android:textColor="#673AB7"
+            android:textSize="24dp" />
+
+
+        <Button
+            android:id="@+id/btnPopUp"
+            style="@android:style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+            android:fontFamily="sans-serif-black"
+            android:padding="12dp"
+            android:text="Nápověda"
+            android:textAlignment="center"
+            android:textColor="#FF9800"
+            android:textSize="24dp" />
+
+        <Button
+            android:id="@+id/btnMenu"
+            style="@android:style/Widget.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+            android:fontFamily="sans-serif-black"
+            android:padding="12dp"
+            android:text="Menu"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="24dp" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

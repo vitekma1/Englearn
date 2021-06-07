@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String email,uid;
-    Button btnImages, btnGrammar1, btnScore, btnListening;
+    Button btnImages, btnGrammar1, btnScore, btnListening, btnRecognition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         btnScore = findViewById(R.id.btnScore);
         btnGrammar1 = findViewById(R.id.btnGrammar1);
         btnListening = findViewById(R.id.btnListening);
+        btnRecognition = findViewById(R.id.btnRecognition);
 
         btnLogout = findViewById(R.id.logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +104,7 @@ public class HomeActivity extends AppCompatActivity {
                 Log.w("test", "Failed to read value.", error.toException());
             }
         });
-
+/*
         // Write a message to the database
         DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
 
@@ -129,7 +130,7 @@ public class HomeActivity extends AppCompatActivity {
                 Log.w("test", "Failed to read value.", error.toException());
             }
         });
-
+*/
 
 
 
@@ -163,6 +164,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, ListeningActivity.class));
+                finish();
+            }
+        });
+        btnRecognition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, RecognizeActivity.class));
                 finish();
             }
         });

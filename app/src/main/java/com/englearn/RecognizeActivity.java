@@ -1,71 +1,57 @@
 package com.englearn;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.speech.RecognizerIntent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+import java.util.Locale;
+
 import static java.lang.Integer.parseInt;
 
-public class ListeningActivity extends AppCompatActivity {
-    Button btnMenu, btnPopUp, btnCheck;
-    MediaPlayer mp;
-    EditText soundId;
+public class RecognizeActivity extends AppCompatActivity {
+    TextView tvResult,tvTask;
+    Button btnMenu,btnPopUp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listening);
-        soundId = findViewById(R.id.soundId);
-        btnPopUp = findViewById(R.id.btnPopUp);
+        setContentView(R.layout.activity_recognize);
+        tvResult = findViewById(R.id.tvResult);
+        tvTask = findViewById(R.id.tvTask);
         btnMenu = (Button)findViewById(R.id.btnMenu);
-        btnCheck = findViewById(R.id.btnCheck);
-        btnCheck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = soundId.getText().toString();
-                if(name.isEmpty()){
-                    soundId.setError("Zadejte slovo");
-                    soundId.requestFocus();
-                }else {
-                            if(name.equals("welcome")){
-                                soundId.setTextColor(Color.rgb(0,200,0));
-                                Toast.makeText(ListeningActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
+        btnPopUp = (Button)findViewById(R.id.btnPopUp);
 
-                            }else {
-                                soundId.setTextColor(Color.rgb(200,0,0));
-                                Toast.makeText(ListeningActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                            }
-            }
-            }
-        });
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               /* if (complete){
+                /*if (complete){
                     // Write a message to the database
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef = database.getReference(uid+"listening1");
+                    DatabaseReference myRef = database.getReference(uid+"animals1");
                     myRef.setValue("done");
                     DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
                     int score = parseInt(valueScore)+100;
                     myRefScore.setValue(String.valueOf(score));
 
                 }*/
-                startActivity(new Intent(ListeningActivity.this, HomeActivity.class));
+                startActivity(new Intent(RecognizeActivity.this, HomeActivity.class));
                 finish();
             }
         });
@@ -100,14 +86,36 @@ public class ListeningActivity extends AppCompatActivity {
         });
     }
 
-    public void startSound(View v) {
-        mp = MediaPlayer.create(v.getContext(), R.raw.welcome);
-        mp.start();
-    }
-    public void stopSound(View v) {
-        mp = MediaPlayer.create(v.getContext(), R.raw.welcome);
-        mp.stop();
+    public void getSpeechInput (View v){
+        Intent i = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+
+        if(i.resolveActivity(getPackageManager()) != null){
+            startActivityForResult(i, 10);
+        } else{
+            Toast.makeText(this,"Vaše zařízení nepodporuje zvukový vstup", Toast.LENGTH_SHORT).show();
+        }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        switch(requestCode) {
+            case 10:
+                if (resultCode == RESULT_OK && data!=null){
+                    ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    tvResult.setText(result.get(result.size()-1));
+                    if(tvResult.getText().toString().equals(tvTask.getText().toString()) ){
+                        Toast.makeText(this,"Správně", Toast.LENGTH_SHORT).show();
+                        tvResult.setTextColor(Color.rgb(0,200,0));
+                    } else{
+                        Toast.makeText(this,"Špatně", Toast.LENGTH_SHORT).show();
+                        tvResult.setTextColor(Color.rgb(200,0,0));
+                    }
+                }
+                break;
+        }
+    }
 }

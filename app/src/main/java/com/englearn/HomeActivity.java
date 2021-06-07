@@ -5,27 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import static com.google.firebase.auth.FirebaseUser.*;
 
 public class HomeActivity extends AppCompatActivity {
     Button btnLogout;
@@ -33,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String email,uid;
-    Button btnImages, btnGrammar1, btnScore;
+    Button btnImages, btnGrammar1, btnScore, btnListening;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
         btnImages = findViewById(R.id.btnImages);
         btnScore = findViewById(R.id.btnScore);
         btnGrammar1 = findViewById(R.id.btnGrammar1);
+        btnListening = findViewById(R.id.btnListening);
 
         btnLogout = findViewById(R.id.logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -166,6 +157,13 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                     startActivity(new Intent(HomeActivity.this, ScoreActivity.class));
                     finish();
+            }
+        });
+        btnListening.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, ListeningActivity.class));
+                finish();
             }
         });
 

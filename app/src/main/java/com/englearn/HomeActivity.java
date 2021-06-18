@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String email,uid;
-    Button btnImages, btnGrammar1, btnScore, btnListening, btnRecognition;
+    Button btnImages, btnGrammar1, btnScore, btnListening, btnRecognition, btnSettings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +35,7 @@ public class HomeActivity extends AppCompatActivity {
         btnGrammar1 = findViewById(R.id.btnGrammar1);
         btnListening = findViewById(R.id.btnListening);
         btnRecognition = findViewById(R.id.btnRecognition);
+        btnSettings = findViewById(R.id.btnSettings);
 
         btnLogout = findViewById(R.id.logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -57,9 +58,33 @@ public class HomeActivity extends AppCompatActivity {
             uid = "error";
         }
 
-        tvTest.setText("Přihlášený uživatel: "+email);
-        // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRefNick = database.getReference(uid+"nickname");
+
+        // Read from the database
+        myRefNick.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                // tvTest.setText(value);
+                if(value!=null) {
+                    tvTest.setText("Přihlášený uživatel: "+ value);
+                }else{
+                    tvTest.setText("Přihlášený uživatel: "+email);}
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
+            }
+        });
+
+
+        // Write a message to the database
         DatabaseReference myRef = database.getReference(uid+"animals1");
 
         // Read from the database
@@ -171,6 +196,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, RecognizeActivity.class));
+                finish();
+            }
+        });
+        btnSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, SettingsActivity.class));
                 finish();
             }
         });

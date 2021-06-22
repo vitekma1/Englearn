@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String email,uid;
-    Button btnImages, btnGrammar1, btnScore, btnListening, btnRecognition, btnSettings,btnProfile;
+    Button btnImages, btnGrammar1, btnScore, btnListening, btnRecognition, btnSettings, btnProfile, btnTranslator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         btnRecognition = findViewById(R.id.btnRecognition);
         btnSettings = findViewById(R.id.btnSettings);
         btnProfile = findViewById(R.id.btnProfile);
+        btnTranslator = findViewById(R.id.btnTranslator);
 
         btnLogout = findViewById(R.id.logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -211,6 +212,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
+                finish();
+            }
+        });
+        btnTranslator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, TranslatorActivity.class));
                 finish();
             }
         });

@@ -22,15 +22,13 @@ public class SettingsActivity extends AppCompatActivity {
 
     private RadioGroup radioTextSize;
     private RadioButton radioButton;
-    private Button btnSettings, btnNickname;
+    private Button btnSettings;
     private String uid;
-    private EditText nickname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         addListenerOnButton();
-        addListenerOnButtonNickname();
 
         //ziskani emailu a id prihlaseneho uzivatele
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -80,20 +78,4 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
-    public void addListenerOnButtonNickname() {
-
-        btnNickname = (Button) findViewById(R.id.btnNickname);
-        nickname = findViewById(R.id.nickname);
-        btnNickname.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference(uid+"nickname");
-                myRef.setValue(nickname.getText().toString());
-                Toast.makeText(SettingsActivity.this, "Přezdívka nastavena", Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
-    }
 }

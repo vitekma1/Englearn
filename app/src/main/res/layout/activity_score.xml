@@ -58,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
-                android:background="#2196F3"
+                android:background="#D5F32183"
                 android:orientation="vertical">
 
                 <TextView
@@ -116,6 +116,40 @@
                     android:layout_marginEnd="30dp"
                     android:layout_marginBottom="25dp"
                     android:text="tvScore3"
+                    android:textAlignment="center"
+                    android:textColor="#FFEB3B"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:background="#C800E2FF"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="Čtení"
+                    android:textAlignment="center"
+                    android:textColor="#FFEB3B"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvScore4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="25dp"
+                    android:text="tvScore4"
                     android:textAlignment="center"
                     android:textColor="#FFEB3B"
                     android:textSize="20sp" />

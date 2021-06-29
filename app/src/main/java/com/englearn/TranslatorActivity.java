@@ -18,7 +18,7 @@ public class TranslatorActivity extends AppCompatActivity {
 
     EditText text;
     TextView translatedText,fromLang,toLang;
-    Button btnTranslate,btnChange;
+    Button btnTranslate,btnChange, btnDelete;
     int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class TranslatorActivity extends AppCompatActivity {
         toLang=findViewById(R.id.to_lang);
         translatedText=findViewById(R.id.translated_text);
         btnTranslate=findViewById(R.id.btnTranslate);
+        btnDelete=findViewById(R.id.btnDelete);
         Button btnMenu = (Button)findViewById(R.id.btnMenu);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +38,13 @@ public class TranslatorActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(TranslatorActivity.this, HomeActivity.class));
                 finish();
+            }
+        });
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                text.setText("");
+                translatedText.setText("");
             }
         });
         btnChange.setOnClickListener(new View.OnClickListener() {

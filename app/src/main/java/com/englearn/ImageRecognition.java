@@ -37,7 +37,7 @@ public class ImageRecognition extends AppCompatActivity {
     ImageView imageView;
     int steps = 1;
     FirebaseAuth mFirebaseAuth;
-    private String uid, valueScore;
+    private String uid, valueScore,valueScoreI;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private boolean complete = false;
     @Override
@@ -183,8 +183,11 @@ public class ImageRecognition extends AppCompatActivity {
                     DatabaseReference myRef = database.getReference(uid+"animals1");
                     myRef.setValue("done");
                     DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    int score = parseInt(valueScore)+100;
+                    int score = parseInt(valueScore)+10;
                     myRefScore.setValue(String.valueOf(score));
+                    DatabaseReference myRefScoreI = database.getReference(uid+"scoreImages");
+                    int scoreI = parseInt(valueScoreI)+10;
+                    myRefScoreI.setValue(String.valueOf(scoreI));
 
                 }
                 startActivity(new Intent(ImageRecognition.this, HomeActivity.class));
@@ -202,7 +205,32 @@ public class ImageRecognition extends AppCompatActivity {
                 String value = dataSnapshot.getValue(String.class);
                 // tvTest.setText(value);
                 if (value!=null){
-                    valueScore = value;}
+                    valueScore = value;}else{
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
+                    myRefScore.setValue("0");}
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
+            }
+        });
+
+        DatabaseReference myRefScoreI = database.getReference(uid+"scoreImages");
+        myRefScoreI.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                    valueScoreI = value;}else{
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRefScore = database.getReference(uid+"scoreImages");
+                    myRefScore.setValue("0");}
             }
 
             @Override

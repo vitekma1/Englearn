@@ -22,7 +22,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private RadioGroup radioTextSize;
     private RadioButton radioButton;
-    private Button btnSettings;
+    private Button btnSettings, btnMenu;
     private String uid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
         else{
             uid = "error";
         }
-        Button btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnMenu = (Button)findViewById(R.id.btnMenu);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -94,6 +94,34 @@
                     android:textAlignment="center"
 
                     android:textSize="24dp" />
+                <Button
+                    android:id="@+id/btnReading"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/menu_button"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="Čtení"
+                    android:textAlignment="center"
+
+                    android:textSize="24dp" />
+                <Button
+                    android:id="@+id/btnLearning"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/menu_button"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="Výuka"
+                    android:textAlignment="center"
+
+                    android:textSize="24dp" />
 
                 <Button
                     android:id="@+id/btnScore"

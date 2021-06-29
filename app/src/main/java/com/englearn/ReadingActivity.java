@@ -1,6 +1,7 @@
 package com.englearn;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,8 +10,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -24,14 +23,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static java.lang.Integer.parseInt;
 
-public class GrammarActivity extends AppCompatActivity {
+public class ReadingActivity extends AppCompatActivity {
 
-    Button btnA1,btnA2,btnA3,btnA4,btnPopUp;
+    private Button btnMenu,btnPopUp,btnA1,btnA2,btnA3,btnA4;
     int steps = 1;
     FirebaseAuth mFirebaseAuth;
     private String uid, valueScore,valueScoreG;
@@ -41,8 +37,17 @@ public class GrammarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grammar);
+        setContentView(R.layout.activity_reading);
+        btnMenu = (Button)findViewById(R.id.btnMenu);
         btnPopUp = findViewById(R.id.btnPopUp);
+
+        btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ReadingActivity.this, HomeActivity.class));
+                finish();
+            }
+        });
         mFirebaseAuth = FirebaseAuth.getInstance();
         tvTask = findViewById(R.id.tvTask);
         tvSentence = findViewById(R.id.tvSentence);
@@ -56,10 +61,10 @@ public class GrammarActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch(steps) {
                     case 1:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 2:
-                        Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
                         btnA1.setText("");
                         btnA2.setText("");
                         btnA3.setText("");
@@ -68,16 +73,16 @@ public class GrammarActivity extends AppCompatActivity {
                         steps++;
                         break;
                     case 3:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 4:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 5:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 6:
-                        Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
                         btnA1.setText("");
                         btnA2.setText("");
                         btnA3.setText("");
@@ -86,16 +91,16 @@ public class GrammarActivity extends AppCompatActivity {
                         steps++;
                         break;
                     case 7:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 8:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 9:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 10:
-                        Toast.makeText(GrammarActivity.this, "Dokončeno", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Dokončeno", Toast.LENGTH_SHORT).show();
                         btnA1.setText("posledni");
                         btnA2.setText("posledni");
                         btnA3.setText("posledni");
@@ -115,7 +120,7 @@ public class GrammarActivity extends AppCompatActivity {
                 switch(steps) {
                     case 1:
 
-                        Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
                         btnA1.setText("");
                         btnA2.setText("");
                         btnA3.setText("");
@@ -123,17 +128,17 @@ public class GrammarActivity extends AppCompatActivity {
                         tvSentence.setText("");
                         steps++;
 
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 3:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 4:
-                        Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
                         btnA1.setText("");
                         btnA2.setText("");
                         btnA3.setText("");
@@ -142,22 +147,22 @@ public class GrammarActivity extends AppCompatActivity {
                         steps++;
                         break;
                     case 5:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 6:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 7:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 8:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 9:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 10:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                 }
 
@@ -170,14 +175,14 @@ public class GrammarActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch(steps) {
                     case 1:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 3:
-                        Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
                         btnA1.setText("");
                         btnA2.setText("");
                         btnA3.setText("");
@@ -186,22 +191,22 @@ public class GrammarActivity extends AppCompatActivity {
                         steps++;
                         break;
                     case 4:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 5:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 6:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 7:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 8:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 9:
-                        Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
                         btnA1.setText("predposledni");
                         btnA2.setText("predposledni");
                         btnA3.setText("predposledni");
@@ -210,7 +215,7 @@ public class GrammarActivity extends AppCompatActivity {
                         steps++;
                         break;
                     case 10:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                 }
 
@@ -223,20 +228,20 @@ public class GrammarActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch(steps) {
                     case 1:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
 
                         break;
                     case 2:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 3:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 4:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 5:
-                        Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
                         btnA1.setText("");
                         btnA2.setText("");
                         btnA3.setText("");
@@ -245,10 +250,10 @@ public class GrammarActivity extends AppCompatActivity {
                         steps++;
                         break;
                     case 6:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 7:
-                        Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
                         btnA1.setText("");
                         btnA2.setText("");
                         btnA3.setText("");
@@ -257,7 +262,7 @@ public class GrammarActivity extends AppCompatActivity {
                         steps++;
                         break;
                     case 8:
-                        Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
                         btnA1.setText("");
                         btnA2.setText("");
                         btnA3.setText("");
@@ -266,10 +271,10 @@ public class GrammarActivity extends AppCompatActivity {
                         steps++;
                         break;
                     case 9:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                     case 10:
-                        Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         break;
                 }
 
@@ -292,17 +297,17 @@ public class GrammarActivity extends AppCompatActivity {
                 if (complete){
                     // Write a message to the database
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef = database.getReference(uid+"grammar1");
+                    DatabaseReference myRef = database.getReference(uid+"reading1");
                     myRef.setValue("done");
                     DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    int score = parseInt(valueScore)+15;
+                    int score = parseInt(valueScore)+5;
                     myRefScore.setValue(String.valueOf(score));
-                    DatabaseReference myRefScoreG = database.getReference(uid+"scoreGrammar");
-                    int scoreG = parseInt(valueScoreG)+15;
+                    DatabaseReference myRefScoreG = database.getReference(uid+"scoreReading");
+                    int scoreG = parseInt(valueScoreG)+5;
                     myRefScoreG.setValue(String.valueOf(scoreG));
 
                 }
-                startActivity(new Intent(GrammarActivity.this, HomeActivity.class));
+                startActivity(new Intent(ReadingActivity.this, HomeActivity.class));
                 finish();
             }
         });
@@ -328,8 +333,8 @@ public class GrammarActivity extends AppCompatActivity {
                 Log.w("test", "Failed to read value.", error.toException());
             }
         });
-        DatabaseReference myRefScoreG = database.getReference(uid+"scoreGrammar");
-        myRefScoreG.addValueEventListener(new ValueEventListener() {
+        DatabaseReference myRefScoreR = database.getReference(uid+"scoreReading");
+        myRefScoreR.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
@@ -339,7 +344,7 @@ public class GrammarActivity extends AppCompatActivity {
                 if (value!=null){
                     valueScoreG = value;}else{
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRefScore = database.getReference(uid+"scoreGrammar");
+                    DatabaseReference myRefScore = database.getReference(uid+"scoreReading");
                     myRefScore.setValue("0");}
             }
 
@@ -349,7 +354,6 @@ public class GrammarActivity extends AppCompatActivity {
                 Log.w("test", "Failed to read value.", error.toException());
             }
         });
-
 
         btnPopUp.setOnClickListener(new View.OnClickListener() {
             @Override

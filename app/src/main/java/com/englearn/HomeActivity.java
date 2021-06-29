@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String email,uid;
-    Button btnImages, btnGrammar1, btnScore, btnListening, btnRecognition, btnSettings, btnProfile, btnTranslator;
+    Button btnImages, btnGrammar1, btnScore, btnListening, btnRecognition, btnSettings, btnProfile, btnTranslator, btnLearning, btnReading;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,8 @@ public class HomeActivity extends AppCompatActivity {
         btnSettings = findViewById(R.id.btnSettings);
         btnProfile = findViewById(R.id.btnProfile);
         btnTranslator = findViewById(R.id.btnTranslator);
+        btnReading = findViewById(R.id.btnReading);
+        btnLearning = findViewById(R.id.btnLearning);
 
         btnLogout = findViewById(R.id.logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -131,6 +133,29 @@ public class HomeActivity extends AppCompatActivity {
                 Log.w("test", "Failed to read value.", error.toException());
             }
         });
+
+        // Write a message to the database
+        DatabaseReference myRefR = database.getReference(uid+"reading1");
+
+        // Read from the database
+        myRefR.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                    if( value.equals("done")){
+                        btnReading.setText("Čtení - hotovo");}}
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
+            }
+        });
 /*
         // Write a message to the database
         DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
@@ -213,6 +238,22 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
                 finish();
+            }
+        });
+        btnLearning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, LearningActivity.class));
+                finish();
+            }
+        });
+        btnReading.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (btnReading.getText().equals("Čtení - hotovo")){
+                }else{
+                    startActivity(new Intent(HomeActivity.this, ReadingActivity.class));
+                    finish();}
             }
         });
         btnTranslator.setOnClickListener(new View.OnClickListener() {

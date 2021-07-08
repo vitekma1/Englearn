@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
-    android:background="@drawable/p2">
+    tools:context=".HomeActivity">
 
 
     <LinearLayout
@@ -20,7 +19,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:background="#0F0D44"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -32,6 +32,20 @@
                     android:layout_marginEnd="65dp"
                     android:layout_marginBottom="50dp"
                     android:text="Welcome"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="26sp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="65dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Lekce"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
@@ -55,15 +69,15 @@
                     style="@android:style/Widget.Button"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:background="@drawable/menu_button"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/menu_button"
                     android:fontFamily="sans-serif-black"
                     android:padding="12dp"
                     android:text="Gramatika"
                     android:textAlignment="center"
-                    android:textSize="24dp"
 
-                    android:layout_marginBottom="7dp"/>
+                    android:textSize="24dp" />
 
                 <Button
                     android:id="@+id/btnListening"
@@ -94,17 +108,47 @@
                     android:textAlignment="center"
 
                     android:textSize="24dp" />
+
                 <Button
                     android:id="@+id/btnReading"
                     style="@android:style/Widget.Button"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="7dp"
+                    android:layout_marginBottom="35dp"
                     android:background="@drawable/menu_button"
                     android:fontFamily="sans-serif-black"
                     android:padding="12dp"
                     android:text="Čtení"
+                    android:textAlignment="center"
+
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="65dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Učení"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/btnTranslator"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/menu_button2"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="Překladač"
                     android:textAlignment="center"
 
                     android:textSize="24dp" />
@@ -114,14 +158,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/menu_button"
+                    android:layout_marginBottom="35dp"
+                    android:background="@drawable/menu_button2"
                     android:fontFamily="sans-serif-black"
                     android:padding="12dp"
                     android:text="Výuka"
                     android:textAlignment="center"
-
                     android:textSize="24dp" />
+
+
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="65dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Nastavení a skóre"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
 
                 <Button
                     android:id="@+id/btnScore"
@@ -130,25 +189,10 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="7dp"
-                    android:background="@drawable/menu_button"
+                    android:background="@drawable/menu_button3"
                     android:fontFamily="sans-serif-black"
                     android:padding="12dp"
                     android:text="Skóre"
-                    android:textAlignment="center"
-
-                    android:textSize="24dp" />
-
-                <Button
-                    android:id="@+id/btnTranslator"
-                    style="@android:style/Widget.Button"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/menu_button"
-                    android:fontFamily="sans-serif-black"
-                    android:padding="12dp"
-                    android:text="Překladač"
                     android:textAlignment="center"
 
                     android:textSize="24dp" />
@@ -160,7 +204,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="7dp"
-                    android:background="@drawable/menu_button"
+                    android:background="@drawable/menu_button3"
                     android:fontFamily="sans-serif-black"
                     android:padding="12dp"
                     android:text="Profil"
@@ -175,7 +219,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="7dp"
-                    android:background="@drawable/menu_button"
+                    android:background="@drawable/menu_button3"
                     android:fontFamily="sans-serif-black"
                     android:padding="12dp"
                     android:text="Nastavení"
@@ -188,16 +232,16 @@
                     style="@android:style/Widget.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="60dp"
-                    android:background="@drawable/menu_button"
                     android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/menu_button4"
                     android:fontFamily="sans-serif-black"
                     android:padding="12dp"
                     android:text="Odhlásit se"
                     android:textAlignment="center"
-                    android:textSize="24dp"
 
-                    android:layout_marginBottom="7dp"/>
+                    android:textSize="24dp" />
 
             </LinearLayout>
         </ScrollView>

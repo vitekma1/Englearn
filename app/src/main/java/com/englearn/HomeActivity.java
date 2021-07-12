@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String email,uid;
-    Button btnImages, btnGrammar1, btnScore, btnListening, btnRecognition, btnSettings, btnProfile, btnTranslator, btnLearning, btnReading;
+    Button btnImages, btnGrammar1, btnScore, btnListening, btnRecognition, btnSettings, btnProfile, btnTranslator, btnLearning, btnReading, btnWriting;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +40,7 @@ public class HomeActivity extends AppCompatActivity {
         btnTranslator = findViewById(R.id.btnTranslator);
         btnReading = findViewById(R.id.btnReading);
         btnLearning = findViewById(R.id.btnLearning);
+        btnWriting = findViewById(R.id.btnWriting);
 
         btnLogout = findViewById(R.id.logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -101,7 +102,30 @@ public class HomeActivity extends AppCompatActivity {
                // tvTest.setText(value);
                 if (value!=null){
                 if( value.equals("done")){
-                btnImages.setText("Zvířata - hotovo");}}
+                btnImages.setText("Slovní zásoba - hotovo");}}
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
+            }
+        });
+
+        // Write a message to the database
+        DatabaseReference myRefW = database.getReference(uid+"writing");
+
+        // Read from the database
+        myRefW.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                    if( value.equals("done")){
+                        btnImages.setText("Psaní - hotovo");}}
             }
 
             @Override
@@ -189,7 +213,7 @@ public class HomeActivity extends AppCompatActivity {
         btnImages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (btnImages.getText().equals("Zvířata - hotovo")){
+                if (btnImages.getText().equals("Slovní zásoba - hotovo")){
                 }else{
                 startActivity(new Intent(HomeActivity.this, ImageRecognition.class));
                 finish();}
@@ -253,6 +277,15 @@ public class HomeActivity extends AppCompatActivity {
                 if (btnReading.getText().equals("Čtení - hotovo")){
                 }else{
                     startActivity(new Intent(HomeActivity.this, ReadingActivity.class));
+                    finish();}
+            }
+        });
+        btnWriting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (btnWriting.getText().equals("Psaní - hotovo")){
+                }else{
+                    startActivity(new Intent(HomeActivity.this, WritingActivity.class));
                     finish();}
             }
         });

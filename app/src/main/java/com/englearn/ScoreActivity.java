@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -21,7 +22,8 @@ public class ScoreActivity extends AppCompatActivity {
 
     TextView tvScore,tvScore2,tvScore3,tvScore4;
     private String email,uid;
-
+    private Long valueTextSize;
+    Button btnMenu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +43,7 @@ public class ScoreActivity extends AppCompatActivity {
             uid = "error";
         }
 
-        Button btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnMenu = (Button)findViewById(R.id.btnMenu);
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,6 +141,46 @@ public class ScoreActivity extends AppCompatActivity {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference myRefScore = database.getReference(uid+"scoreReading");
                     myRefScore.setValue("0");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
+            }
+        });
+
+        DatabaseReference myRefTextSize = database.getReference(uid+"textSize");
+        myRefTextSize.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                Long value = dataSnapshot.getValue(Long.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                    valueTextSize = value;} else {valueTextSize = 0L;}
+                if(valueTextSize==2131231000){
+                    tvScore.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    tvScore2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    tvScore3.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    tvScore4.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                }
+                if(valueTextSize==2131231001){
+                    tvScore.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    tvScore2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    tvScore3.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    tvScore4.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                }
+                if(valueTextSize==2131231002){
+                    tvScore.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    tvScore2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    tvScore3.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    tvScore4.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                 }
             }
 

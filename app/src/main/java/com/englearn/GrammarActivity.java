@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -31,9 +32,10 @@ import static java.lang.Integer.parseInt;
 
 public class GrammarActivity extends AppCompatActivity {
 
-    Button btnA1,btnA2,btnA3,btnA4,btnPopUp;
+    Button btnA1,btnA2,btnA3,btnA4,btnPopUp,btnMenu;
     int steps = 1;
     FirebaseAuth mFirebaseAuth;
+    private Long valueTextSize;
     private String uid, valueScore,valueScoreG;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private boolean complete = false;
@@ -284,7 +286,7 @@ public class GrammarActivity extends AppCompatActivity {
         else{
             uid = "error";
         }
-        Button btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnMenu = (Button)findViewById(R.id.btnMenu);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -379,5 +381,56 @@ public class GrammarActivity extends AppCompatActivity {
                 });}
 
         });
+
+        DatabaseReference myRefTextSize = database.getReference(uid+"textSize");
+        myRefTextSize.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                Long value = dataSnapshot.getValue(Long.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                    valueTextSize = value;} else {valueTextSize = 0L;}
+                if(valueTextSize==2131231000){
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnA3.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnA4.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                }
+                if(valueTextSize==2131231001){
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnA3.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnA4.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                }
+                if(valueTextSize==2131231002){
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnA3.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnA4.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
+            }
+        });
+
+
     }
 }

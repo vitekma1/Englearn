@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,8 +19,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class HomeActivity extends AppCompatActivity {
+    private Long valueTextSize;
     Button btnLogout;
-    TextView tvTest, tvScore;
+    TextView tvTest, textView2,textView3,textView4,textView5;
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String email,uid;
@@ -29,7 +31,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         tvTest = findViewById(R.id.textView2);
-        tvScore = findViewById(R.id.tvScore);
         btnImages = findViewById(R.id.btnImages);
         btnScore = findViewById(R.id.btnScore);
         btnGrammar1 = findViewById(R.id.btnGrammar1);
@@ -41,6 +42,10 @@ public class HomeActivity extends AppCompatActivity {
         btnReading = findViewById(R.id.btnReading);
         btnLearning = findViewById(R.id.btnLearning);
         btnWriting = findViewById(R.id.btnWriting);
+        textView2 = findViewById(R.id.textView2);
+        textView3 = findViewById(R.id.textView3);
+        textView4 = findViewById(R.id.textView4);
+        textView5 = findViewById(R.id.textView5);
 
         btnLogout = findViewById(R.id.logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
@@ -297,6 +302,83 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        DatabaseReference myRefTextSize = database.getReference(uid+"textSize");
+        myRefTextSize.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                Long value = dataSnapshot.getValue(Long.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                    valueTextSize = value;} else {valueTextSize = 0L;}
+                if(valueTextSize==2131231000){
+                    btnImages.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnGrammar1.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnScore.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnListening.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnRecognition.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnSettings.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnProfile.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnTranslator.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnLearning.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnReading.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnWriting.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnLogout.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    textView3.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    textView4.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    textView5.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                }
+                if(valueTextSize==2131231001){
+                    btnImages.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnGrammar1.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnScore.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnListening.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnRecognition.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnSettings.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnProfile.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnTranslator.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnLearning.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnReading.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnWriting.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnLogout.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    textView3.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    textView4.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    textView5.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                }
+                if(valueTextSize==2131231002){
+                    btnImages.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnGrammar1.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnScore.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnListening.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnRecognition.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnSettings.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnProfile.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnTranslator.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnLearning.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnReading.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnWriting.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnLogout.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    textView3.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    textView4.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    textView5.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                }
+            }
 
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
+            }
+        });
     }
 }

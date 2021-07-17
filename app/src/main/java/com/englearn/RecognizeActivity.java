@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -17,8 +19,13 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -26,9 +33,10 @@ import java.util.Locale;
 import static java.lang.Integer.parseInt;
 
 public class RecognizeActivity extends AppCompatActivity {
-    TextView tvResult,tvTask;
-    Button btnMenu,btnPopUp;
-
+    TextView tvResult,tvTask,tvHeadline;
+    Button btnMenu,btnPopUp, buttonzm;
+    private Long valueTextSize;
+    private String uid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +45,8 @@ public class RecognizeActivity extends AppCompatActivity {
         tvTask = findViewById(R.id.tvTask);
         btnMenu = (Button)findViewById(R.id.btnMenu);
         btnPopUp = (Button)findViewById(R.id.btnPopUp);
+        tvHeadline = (Button)findViewById(R.id.tvHeadline);
+        buttonzm = (Button)findViewById(R.id.buttonzm);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +93,58 @@ public class RecognizeActivity extends AppCompatActivity {
                     }
                 });}
 
+        });
+
+        //ziskani emailu a id prihlaseneho uzivatele
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            uid = user.getUid();
+        }
+        else{
+            uid = "error";
+        }
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRefTextSize = database.getReference(uid+"textSize");
+        myRefTextSize.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                Long value = dataSnapshot.getValue(Long.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                    valueTextSize = value;} else {valueTextSize = 0L;}
+                if(valueTextSize==2131231000){
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    tvResult.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    tvHeadline.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    buttonzm.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                }
+                if(valueTextSize==2131231001){
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    tvResult.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    tvHeadline.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    buttonzm.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                }
+                if(valueTextSize==2131231002){
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    tvResult.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    tvHeadline.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    buttonzm.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
+            }
         });
     }
 

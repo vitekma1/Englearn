@@ -15,30 +15,51 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="33dp"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:text="Přihlášení"
-            android:textColor="#FFFFFF"
-            android:textColorHighlight="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:textColorLink="#FFFFFF"
-            android:textSize="36sp" />
+            android:layout_height="match_parent">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="33dp"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:text="Přihlášení"
+                    android:textColor="#03A9F4"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="36sp" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:text="Níže napište váš email"
+                    android:textColor="#FFEB3B"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="24sp" />
         <EditText
             android:id="@+id/emailId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="55dp"
             android:layout_marginBottom="33dp"
             android:ems="10"
@@ -50,12 +71,26 @@
             android:textColorLink="#FFFFFF"
             android:textSize="24sp" />
 
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="5dp"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:text="Níže napište vaše heslo"
+                    android:textColor="#FFEB3B"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="24sp" />
         <EditText
             android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="55dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="55dp"
             android:layout_marginBottom="42dp"
             android:ems="10"
@@ -80,18 +115,19 @@
             android:textAlignment="center"
             android:textSize="24dp" />
 
-        <TextView
-            android:id="@+id/tvSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="65dp"
-            android:layout_marginTop="22dp"
-            android:layout_marginEnd="65dp"
-            android:text="Nemáte ještě účet? Registrujte se zde"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp" />
-
+                <TextView
+                    android:id="@+id/tvSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginEnd="65dp"
+                    android:text="Nemáte ještě účet? Registrujte se zde"
+                    android:textAlignment="center"
+                    android:textColor="#FFEB3B"
+                    android:textSize="24sp" />
+    </LinearLayout>
+</ScrollView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

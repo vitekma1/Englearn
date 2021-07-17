@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -25,17 +27,22 @@ import com.google.firebase.database.ValueEventListener;
 import static java.lang.Integer.parseInt;
 
 public class WritingActivity extends AppCompatActivity {
-    Button btnPopUp;
+    private Button btnPopUp,btnMenu,btnCheck;
     private String uid, valueScore,valueScoreW;
     private boolean complete = false;
-    TextView tvTask;
+    private TextView tvTask;
+    private Long valueTextSize;
+    private EditText animalId;
     FirebaseAuth mFirebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_writing);
         btnPopUp = findViewById(R.id.btnPopUp);
         tvTask = findViewById(R.id.tvTask);
+        btnCheck = findViewById(R.id.btnCheck);
+        animalId = findViewById(R.id.animalId);
         mFirebaseAuth = FirebaseAuth.getInstance();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         //ziskani emailu a id prihlaseneho uzivatele
@@ -89,7 +96,7 @@ public class WritingActivity extends AppCompatActivity {
                 Log.w("test", "Failed to read value.", error.toException());
             }
         });
-        Button btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnMenu = (Button)findViewById(R.id.btnMenu);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +145,46 @@ public class WritingActivity extends AppCompatActivity {
                     }
                 });}
 
+        });
+
+        DatabaseReference myRefTextSize = database.getReference(uid+"textSize");
+        myRefTextSize.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                Long value = dataSnapshot.getValue(Long.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                    valueTextSize = value;} else {valueTextSize = 0L;}
+                if(valueTextSize==2131231000){
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    animalId.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                }
+                if(valueTextSize==2131231001){
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    animalId.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                }
+                if(valueTextSize==2131231002){
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    animalId.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
+            }
         });
     }
 }

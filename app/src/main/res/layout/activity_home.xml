@@ -33,7 +33,7 @@
                     android:layout_marginBottom="20dp"
                     android:text="Welcome"
                     android:textAlignment="center"
-                    android:textColor="#FFEB3B"
+                    android:textColor="#FFFFFF"
                     android:textSize="26sp" />
 
                 <TextView
@@ -47,7 +47,7 @@
                     android:layout_marginBottom="20dp"
                     android:text="Lekce"
                     android:textAlignment="center"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#07E20B"
                     android:textSize="24sp" />
 
                 <Button
@@ -148,7 +148,7 @@
                     android:layout_marginBottom="20dp"
                     android:text="Učení"
                     android:textAlignment="center"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#00FFF7"
                     android:textSize="24sp" />
 
                 <Button
@@ -180,7 +180,6 @@
                     android:textSize="24dp" />
 
 
-
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="wrap_content"
@@ -192,7 +191,7 @@
                     android:layout_marginBottom="20dp"
                     android:text="Nastavení a skóre"
                     android:textAlignment="center"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#DF30FF"
                     android:textSize="24sp" />
 
                 <Button

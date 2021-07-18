@@ -35,6 +35,7 @@ public class ReadingActivity extends AppCompatActivity {
     private String uid;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private boolean complete = false;
+    private int localScore = 20;
     private String valueScore = "0";
     private String valueScoreG = "0";
     TextView tvTask,tvSentence;
@@ -66,6 +67,7 @@ public class ReadingActivity extends AppCompatActivity {
                 switch(steps) {
                     case 1:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 2:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -78,12 +80,15 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 3:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 4:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 5:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 6:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -96,12 +101,15 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 7:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 8:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 9:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 10:
                         Toast.makeText(ReadingActivity.this, "Dokončeno", Toast.LENGTH_SHORT).show();
@@ -137,9 +145,11 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 2:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 3:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 4:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -152,21 +162,27 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 5:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 6:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 7:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 8:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 9:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 10:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                 }
 
@@ -180,10 +196,11 @@ public class ReadingActivity extends AppCompatActivity {
                 switch(steps) {
                     case 1:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-
+                        if(localScore>0){localScore--;}
                         break;
                     case 2:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 3:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -196,18 +213,23 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 4:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 5:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 6:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 7:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 8:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 9:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -220,6 +242,7 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 10:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                 }
 
@@ -233,16 +256,19 @@ public class ReadingActivity extends AppCompatActivity {
                 switch(steps) {
                     case 1:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-
+                        if(localScore>0){localScore--;}
                         break;
                     case 2:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 3:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 4:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 5:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -255,6 +281,7 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 6:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 7:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -276,9 +303,11 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 9:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 10:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                 }
 
@@ -304,10 +333,10 @@ public class ReadingActivity extends AppCompatActivity {
                     DatabaseReference myRef = database.getReference(uid+"reading1");
                     myRef.setValue("done");
                     DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    int score = parseInt(valueScore)+5;
+                    int score = parseInt(valueScore)+localScore;
                     myRefScore.setValue(String.valueOf(score));
                     DatabaseReference myRefScoreG = database.getReference(uid+"scoreReading");
-                    int scoreG = parseInt(valueScoreG)+5;
+                    int scoreG = parseInt(valueScoreG)+localScore;
                     myRefScoreG.setValue(String.valueOf(scoreG));
 
                 }

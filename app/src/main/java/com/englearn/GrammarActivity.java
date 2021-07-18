@@ -40,6 +40,7 @@ public class GrammarActivity extends AppCompatActivity {
     private String valueScore = "0";
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private boolean complete = false;
+    private int localScore = 15;
     TextView tvTask,tvSentence;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +61,7 @@ public class GrammarActivity extends AppCompatActivity {
                 switch(steps) {
                     case 1:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 2:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -72,12 +74,15 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 3:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 4:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 5:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 6:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -90,12 +95,15 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 7:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 8:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 9:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 10:
                         Toast.makeText(GrammarActivity.this, "Dokončeno", Toast.LENGTH_SHORT).show();
@@ -131,9 +139,11 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 2:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 3:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 4:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -146,21 +156,27 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 5:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 6:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 7:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 8:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 9:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 10:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                 }
 
@@ -174,10 +190,11 @@ public class GrammarActivity extends AppCompatActivity {
                 switch(steps) {
                     case 1:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-
+                        if(localScore>0){localScore--;}
                         break;
                     case 2:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 3:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -190,18 +207,23 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 4:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 5:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 6:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 7:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 8:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 9:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -214,6 +236,7 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 10:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                 }
 
@@ -227,16 +250,19 @@ public class GrammarActivity extends AppCompatActivity {
                 switch(steps) {
                     case 1:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-
+                        if(localScore>0){localScore--;}
                         break;
                     case 2:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 3:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 4:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 5:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -249,6 +275,7 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 6:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 7:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -270,9 +297,11 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 9:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                     case 10:
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                        if(localScore>0){localScore--;}
                         break;
                 }
 
@@ -298,10 +327,10 @@ public class GrammarActivity extends AppCompatActivity {
                     DatabaseReference myRef = database.getReference(uid+"grammar1");
                     myRef.setValue("done");
                     DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    int score = parseInt(valueScore)+15;
+                    int score = parseInt(valueScore)+localScore;
                     myRefScore.setValue(String.valueOf(score));
                     DatabaseReference myRefScoreG = database.getReference(uid+"scoreGrammar");
-                    int scoreG = parseInt(valueScoreG)+15;
+                    int scoreG = parseInt(valueScoreG)+localScore;
                     myRefScoreG.setValue(String.valueOf(scoreG));
 
                 }

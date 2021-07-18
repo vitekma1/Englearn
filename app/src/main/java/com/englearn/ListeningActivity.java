@@ -39,6 +39,7 @@ public class ListeningActivity extends AppCompatActivity {
     private String uid;
     private String valueScore = "0";
     private String valueScoreL = "0";
+    private int localScore = 25;
     private boolean complete = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class ListeningActivity extends AppCompatActivity {
                             }else {
                                 soundId.setTextColor(Color.rgb(200,0,0));
                                 Toast.makeText(ListeningActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
 
 
@@ -88,6 +90,7 @@ public class ListeningActivity extends AppCompatActivity {
                             }else {
                                 soundId.setTextColor(Color.rgb(200,0,0));
                                 Toast.makeText(ListeningActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
 
                             break;
@@ -102,6 +105,7 @@ public class ListeningActivity extends AppCompatActivity {
                             }else {
                                 soundId.setTextColor(Color.rgb(200,0,0));
                                 Toast.makeText(ListeningActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
 
 
@@ -117,6 +121,7 @@ public class ListeningActivity extends AppCompatActivity {
                             }else {
                                 soundId.setTextColor(Color.rgb(200,0,0));
                                 Toast.makeText(ListeningActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
 
                             break;
@@ -128,6 +133,7 @@ public class ListeningActivity extends AppCompatActivity {
                             }else {
                                 soundId.setTextColor(Color.rgb(200,0,0));
                                 Toast.makeText(ListeningActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
                             break;
                     }
@@ -188,10 +194,10 @@ public class ListeningActivity extends AppCompatActivity {
                     DatabaseReference myRef = database.getReference(uid+"listening1");
                     myRef.setValue("done");
                     DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    int score = parseInt(valueScore)+25;
+                    int score = parseInt(valueScore)+localScore;
                     myRefScore.setValue(String.valueOf(score));
                     DatabaseReference myRefScoreG = database.getReference(uid+"scoreListening");
-                    int scoreG = parseInt(valueScoreL)+25;
+                    int scoreG = parseInt(valueScoreL)+localScore;
                     myRefScoreG.setValue(String.valueOf(scoreG));
 
                 }

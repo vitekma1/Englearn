@@ -29,6 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Locale;
+import java.util.Random;
 
 import static java.lang.Integer.parseInt;
 
@@ -170,8 +171,11 @@ public class RecognizeActivity extends AppCompatActivity {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     tvResult.setText(result.get(result.size()-1));
                     if(tvResult.getText().toString().equals(tvTask.getText().toString()) ){
-                        Toast.makeText(this,"Správně", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this,"Správně, pokračujte dalším slovem", Toast.LENGTH_SHORT).show();
                         tvResult.setTextColor(Color.rgb(0,200,0));
+                        Random generate = new Random();
+                        String[] words = {"Welcome", "Car", "Window", "Tiger", "Pen", "Computer","Mobile","Hello","Goodbye","Queen","King","Room","Morning","Why","Which","Who", "Can","Clean","Long","Short"};
+                        tvTask.setText(words[generate.nextInt(20)]);
                     } else{
                         Toast.makeText(this,"Špatně", Toast.LENGTH_SHORT).show();
                         tvResult.setTextColor(Color.rgb(200,0,0));

@@ -42,6 +42,7 @@ public class ImageRecognition extends AppCompatActivity {
     private String uid;
     private String valueScoreI = "0";
     private String valueScore = "0";
+    private int localScore = 20;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private boolean complete = false;
     @Override
@@ -72,6 +73,7 @@ public class ImageRecognition extends AppCompatActivity {
                                 steps++;
                             }else {
                                 Toast.makeText(ImageRecognition.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
                             break;
                         case 2:
@@ -82,6 +84,7 @@ public class ImageRecognition extends AppCompatActivity {
                                 steps++;
                             }else {
                                 Toast.makeText(ImageRecognition.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
                             break;
                         case 3:
@@ -92,6 +95,7 @@ public class ImageRecognition extends AppCompatActivity {
                                 steps++;
                             }else {
                                 Toast.makeText(ImageRecognition.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
                             break;
                         case 4:
@@ -102,6 +106,7 @@ public class ImageRecognition extends AppCompatActivity {
                                 steps++;
                             }else {
                                 Toast.makeText(ImageRecognition.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
                             break;
                         case 5:
@@ -112,6 +117,7 @@ public class ImageRecognition extends AppCompatActivity {
                                 steps++;
                             }else {
                                 Toast.makeText(ImageRecognition.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
                             break;
                         case 6:
@@ -122,6 +128,7 @@ public class ImageRecognition extends AppCompatActivity {
                                 steps++;
                             }else {
                                 Toast.makeText(ImageRecognition.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
                             break;
                         case 7:
@@ -132,6 +139,7 @@ public class ImageRecognition extends AppCompatActivity {
                                 steps++;
                             }else {
                                 Toast.makeText(ImageRecognition.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
                             break;
                         case 8:
@@ -142,6 +150,7 @@ public class ImageRecognition extends AppCompatActivity {
                                 steps++;
                             }else {
                                 Toast.makeText(ImageRecognition.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
                             break;
                         case 9:
@@ -152,6 +161,7 @@ public class ImageRecognition extends AppCompatActivity {
                                 steps++;
                             }else {
                                 Toast.makeText(ImageRecognition.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
                             break;
                         case 10:
@@ -160,6 +170,7 @@ public class ImageRecognition extends AppCompatActivity {
                                 complete = true;
                             }else {
                                 Toast.makeText(ImageRecognition.this, "Spatne", Toast.LENGTH_SHORT).show();
+                                if(localScore>0){localScore--;}
                             }
                             break;
                     }
@@ -187,10 +198,10 @@ public class ImageRecognition extends AppCompatActivity {
                     DatabaseReference myRef = database.getReference(uid+"animals1");
                     myRef.setValue("done");
                     DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    int score = parseInt(valueScore)+10;
+                    int score = parseInt(valueScore)+localScore;
                     myRefScore.setValue(String.valueOf(score));
                     DatabaseReference myRefScoreI = database.getReference(uid+"scoreImages");
-                    int scoreI = parseInt(valueScoreI)+10;
+                    int scoreI = parseInt(valueScoreI)+localScore;
                     myRefScoreI.setValue(String.valueOf(scoreI));
 
                 }

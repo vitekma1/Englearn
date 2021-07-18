@@ -45,7 +45,7 @@ public class RecognizeActivity extends AppCompatActivity {
         tvTask = findViewById(R.id.tvTask);
         btnMenu = (Button)findViewById(R.id.btnMenu);
         btnPopUp = (Button)findViewById(R.id.btnPopUp);
-        tvHeadline = (Button)findViewById(R.id.tvHeadline);
+        tvHeadline = findViewById(R.id.tvHeadline);
         buttonzm = (Button)findViewById(R.id.buttonzm);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {

@@ -39,7 +39,9 @@ public class ImageRecognition extends AppCompatActivity {
     int steps = 1;
     private Long valueTextSize;
     FirebaseAuth mFirebaseAuth;
-    private String uid, valueScore,valueScoreI;
+    private String uid;
+    private String valueScoreI = "0";
+    private String valueScore = "0";
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private boolean complete = false;
     @Override

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListeningActivity">
+    tools:context=".ListeningActivity"
+    android:background="@drawable/p2">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
+
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
@@ -26,25 +28,30 @@
             android:layout_marginStart="65dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="65dp"
-            android:text="Poslech"
+            android:text="Poslech 1/5"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="24sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:layout_marginBottom="5dp"
+            android:background="#E64CAF50"
             android:onClick="startSound"
-            android:text="Přehrát" />
+            android:text="Přehrát"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/stop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#D5FF2222"
+            android:onClick="stopSound"
             android:text="Stop"
-            android:onClick="stopSound"/>
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tvTask"
@@ -55,10 +62,10 @@
             android:layout_marginTop="40dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="20dp"
-            android:text="Napište slovo, které slyšíte"
+            android:text="Napište slova, která slyšíte oddělené mezerou"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="26sp" />
+            android:textColor="#FFEB3B"
+            android:textSize="25sp" />
 
         <EditText
             android:id="@+id/soundId"
@@ -73,7 +80,7 @@
             android:textColorHighlight="#FFFFFF"
             android:textColorHint="#FFFFFF"
             android:textColorLink="#FFFFFF"
-            android:textSize="24sp" />
+            android:textSize="25sp" />
         <Button
             android:id="@+id/btnCheck"
             style="@android:style/Widget.Button"

@@ -32,9 +32,11 @@ public class ReadingActivity extends AppCompatActivity {
     int steps = 1;
     FirebaseAuth mFirebaseAuth;
     private Long valueTextSize;
-    private String uid, valueScore,valueScoreG;
+    private String uid;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private boolean complete = false;
+    private String valueScore = "0";
+    private String valueScoreG = "0";
     TextView tvTask,tvSentence;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

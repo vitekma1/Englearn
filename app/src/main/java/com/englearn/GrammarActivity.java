@@ -36,7 +36,8 @@ public class GrammarActivity extends AppCompatActivity {
     int steps = 1;
     FirebaseAuth mFirebaseAuth;
     private Long valueTextSize;
-    private String uid, valueScore,valueScoreG;
+    private String uid,valueScoreG;
+    private String valueScore = "0";
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private boolean complete = false;
     TextView tvTask,tvSentence;

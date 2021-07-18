@@ -185,6 +185,29 @@ public class HomeActivity extends AppCompatActivity {
                 Log.w("test", "Failed to read value.", error.toException());
             }
         });
+
+        // Write a message to the database
+        DatabaseReference myRefL = database.getReference(uid+"listening1");
+
+        // Read from the database
+        myRefL.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                // tvTest.setText(value);
+                if (value!=null){
+                    if( value.equals("done")){
+                        btnListening.setText("Poslech - hotovo");}}
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("test", "Failed to read value.", error.toException());
+            }
+        });
 /*
         // Write a message to the database
         DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
@@ -244,8 +267,9 @@ public class HomeActivity extends AppCompatActivity {
         btnListening.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, ListeningActivity.class));
-                finish();
+                if (btnListening.getText().equals("Poslech - hotovo")){
+                }else{startActivity(new Intent(HomeActivity.this, ListeningActivity.class));
+                finish();}
             }
         });
         btnRecognition.setOnClickListener(new View.OnClickListener() {
@@ -354,18 +378,30 @@ public class HomeActivity extends AppCompatActivity {
                 }
                 if(valueTextSize==2131231002){
                     btnImages.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnImages.setPadding(12,17,12,20);
                     btnGrammar1.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnGrammar1.setPadding(12,17,12,20);
                     btnScore.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnScore.setPadding(12,17,12,20);
                     btnListening.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnListening.setPadding(12,17,12,20);
                     btnRecognition.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnRecognition.setPadding(12,17,12,20);
                     btnSettings.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnSettings.setPadding(12,17,12,20);
                     btnProfile.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnProfile.setPadding(12,17,12,20);
                     btnTranslator.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnTranslator.setPadding(12,17,12,20);
                     btnLearning.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnLearning.setPadding(12,17,12,20);
                     btnReading.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnReading.setPadding(12,17,12,20);
                     btnWriting.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnWriting.setPadding(12,17,12,20);
                     tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnLogout.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    btnLogout.setPadding(12,17,12,20);
                     tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     textView3.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);

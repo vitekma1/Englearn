@@ -28,10 +28,12 @@ import static java.lang.Integer.parseInt;
 
 public class WritingActivity extends AppCompatActivity {
     private Button btnPopUp,btnMenu,btnCheck;
-    private String uid, valueScore,valueScoreW;
+    private String uid;
     private boolean complete = false;
     private TextView tvTask;
     private Long valueTextSize;
+    private String valueScore = "0";
+    private String valueScoreW = "0";
     private EditText animalId;
     FirebaseAuth mFirebaseAuth;
 

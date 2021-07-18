@@ -66,9 +66,9 @@ public class ImageRecognition extends AppCompatActivity {
                 }else {
                     switch(steps) {
                         case 1:
-                            if(name.equals("lion")){
+                            if(name.equals("bus")){
                                 Toast.makeText(ImageRecognition.this, "Spravne", Toast.LENGTH_SHORT).show();
-                                imageView.setImageResource(R.drawable.cow);
+                                imageView.setImageResource(R.drawable.book);
                                 animalId.setText(null);
                                 steps++;
                             }else {
@@ -77,7 +77,7 @@ public class ImageRecognition extends AppCompatActivity {
                             }
                             break;
                         case 2:
-                            if(name.equals("cow")){
+                            if(name.equals("book")){
                                 Toast.makeText(ImageRecognition.this, "Spravne", Toast.LENGTH_SHORT).show();
                                 imageView.setImageResource(R.drawable.dog);
                                 animalId.setText(null);
@@ -101,7 +101,7 @@ public class ImageRecognition extends AppCompatActivity {
                         case 4:
                             if(name.equals("cat")){
                                 Toast.makeText(ImageRecognition.this, "Spravne", Toast.LENGTH_SHORT).show();
-                                imageView.setImageResource(R.drawable.camel);
+                                imageView.setImageResource(R.drawable.chair);
                                 animalId.setText(null);
                                 steps++;
                             }else {
@@ -110,9 +110,9 @@ public class ImageRecognition extends AppCompatActivity {
                             }
                             break;
                         case 5:
-                            if(name.equals("camel")){
+                            if(name.equals("chair")){
                                 Toast.makeText(ImageRecognition.this, "Spravne", Toast.LENGTH_SHORT).show();
-                                imageView.setImageResource(R.drawable.parrot);
+                                imageView.setImageResource(R.drawable.meat);
                                 animalId.setText(null);
                                 steps++;
                             }else {
@@ -121,9 +121,9 @@ public class ImageRecognition extends AppCompatActivity {
                             }
                             break;
                         case 6:
-                            if(name.equals("parrot")){
+                            if(name.equals("meat")){
                                 Toast.makeText(ImageRecognition.this, "Spravne", Toast.LENGTH_SHORT).show();
-                                imageView.setImageResource(R.drawable.elephant);
+                                imageView.setImageResource(R.drawable.tree);
                                 animalId.setText(null);
                                 steps++;
                             }else {
@@ -132,9 +132,9 @@ public class ImageRecognition extends AppCompatActivity {
                             }
                             break;
                         case 7:
-                            if(name.equals("elephant")){
+                            if(name.equals("tree")){
                                 Toast.makeText(ImageRecognition.this, "Spravne", Toast.LENGTH_SHORT).show();
-                                imageView.setImageResource(R.drawable.tiger);
+                                imageView.setImageResource(R.drawable.window);
                                 animalId.setText(null);
                                 steps++;
                             }else {
@@ -143,9 +143,9 @@ public class ImageRecognition extends AppCompatActivity {
                             }
                             break;
                         case 8:
-                            if(name.equals("tiger")){
+                            if(name.equals("window")){
                                 Toast.makeText(ImageRecognition.this, "Spravne", Toast.LENGTH_SHORT).show();
-                                imageView.setImageResource(R.drawable.owl);
+                                imageView.setImageResource(R.drawable.table);
                                 animalId.setText(null);
                                 steps++;
                             }else {
@@ -154,9 +154,9 @@ public class ImageRecognition extends AppCompatActivity {
                             }
                             break;
                         case 9:
-                            if(name.equals("owl")){
+                            if(name.equals("table")){
                                 Toast.makeText(ImageRecognition.this, "Spravne", Toast.LENGTH_SHORT).show();
-                                imageView.setImageResource(R.drawable.chicken);
+                                imageView.setImageResource(R.drawable.pen);
                                 animalId.setText(null);
                                 steps++;
                             }else {
@@ -165,7 +165,7 @@ public class ImageRecognition extends AppCompatActivity {
                             }
                             break;
                         case 10:
-                            if(name.equals("chicken")){
+                            if(name.equals("pen")){
                                 Toast.makeText(ImageRecognition.this, "Dokončeno", Toast.LENGTH_SHORT).show();
                                 complete = true;
                             }else {

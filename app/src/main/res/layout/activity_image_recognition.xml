@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ImageRecognition"
-    android:background="@drawable/p1">
+    android:background="@drawable/p2">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="25dp"
             android:textAlignment="center"
-            app:srcCompat="@drawable/lion" />
+            app:srcCompat="@drawable/bus" />
 
         <TextView
             android:id="@+id/tvTask"
@@ -39,7 +39,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="10dp"
-            android:text="Napište anglický název zvířete"
+            android:text="Napište anglicky co vidíte na obrázku"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />

@@ -25,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private String email,uid;
-    Button btnImages, btnGrammar1, btnScore, btnListening, btnRecognition, btnSettings, btnProfile, btnTranslator, btnLearning, btnReading, btnWriting;
+    Button btnImages, btnGrammar1, btnScore, btnListening, btnRecognition, btnSettings, btnProfile, btnTranslator, btnLearning, btnReading;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +41,6 @@ public class HomeActivity extends AppCompatActivity {
         btnTranslator = findViewById(R.id.btnTranslator);
         btnReading = findViewById(R.id.btnReading);
         btnLearning = findViewById(R.id.btnLearning);
-        btnWriting = findViewById(R.id.btnWriting);
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
         textView4 = findViewById(R.id.textView4);
@@ -309,15 +308,7 @@ public class HomeActivity extends AppCompatActivity {
                     finish();}
             }
         });
-        btnWriting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (btnWriting.getText().equals("Psaní - hotovo")){
-                }else{
-                    startActivity(new Intent(HomeActivity.this, WritingActivity.class));
-                    finish();}
-            }
-        });
+
         btnTranslator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -347,7 +338,6 @@ public class HomeActivity extends AppCompatActivity {
                     btnTranslator.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnLearning.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnReading.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnWriting.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnLogout.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
@@ -367,7 +357,6 @@ public class HomeActivity extends AppCompatActivity {
                     btnTranslator.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnLearning.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnReading.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnWriting.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnLogout.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
@@ -397,8 +386,6 @@ public class HomeActivity extends AppCompatActivity {
                     btnLearning.setPadding(12,17,12,20);
                     btnReading.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnReading.setPadding(12,17,12,20);
-                    btnWriting.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnWriting.setPadding(12,17,12,20);
                     tvTest.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnLogout.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnLogout.setPadding(12,17,12,20);

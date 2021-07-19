@@ -31,7 +31,7 @@
             android:layout_marginBottom="5dp"
             android:text="Vyslovte správně slovo:"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
+            android:textColor="#FFEB3B"
             android:textSize="24sp" />
 
         <TextView
@@ -56,7 +56,7 @@
             android:layout_marginStart="65dp"
             android:layout_marginEnd="65dp"
             android:layout_marginBottom="20dp"
-            android:text="result"
+            android:text="zde se objeví vámi vyslovené slovo"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />

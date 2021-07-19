@@ -19,14 +19,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tvTask"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="15dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="30dp"
                     android:layout_marginBottom="30dp"
@@ -35,15 +35,6 @@
                     android:textColor="#00FF23"
                     android:textSize="24sp" />
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="325dp"
-                    android:layout_height="250dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:textAlignment="center"
-                    app:srcCompat="@drawable/lion" />
                 <TextView
                     android:id="@+id/tvSentence"
                     android:layout_width="wrap_content"
@@ -52,21 +43,11 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="30dp"
                     android:layout_marginBottom="30dp"
-                    android:text="lev - lion"
+                    android:text="autobus - bus"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="325dp"
-                    android:layout_height="250dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:textAlignment="center"
-                    app:srcCompat="@drawable/cow" />
                 <TextView
                     android:id="@+id/tvSentence2"
                     android:layout_width="wrap_content"
@@ -75,20 +56,11 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="30dp"
                     android:layout_marginBottom="30dp"
-                    android:text="kráva - cow"
+                    android:text="kniha - book"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="325dp"
-                    android:layout_height="250dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:textAlignment="center"
-                    app:srcCompat="@drawable/cat" />
                 <TextView
                     android:id="@+id/tvSentence3"
                     android:layout_width="wrap_content"
@@ -103,6 +75,110 @@
                     android:textSize="24sp" />
 
                 <TextView
+                    android:id="@+id/tvSentence4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="pes - dog"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvSentence5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="židle - chair"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvSentence6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="maso - meat"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvSentence7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="strom - tree"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvSentence8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="okno - window"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvSentence9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="stůl - table"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvSentence10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="pero - pen"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvSentence11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="Pro více překladů přejděte v menu do překladače"
+                    android:textAlignment="center"
+                    android:textColor="#FFEC41"
+                    android:textSize="24sp" />
+
+                <TextView
                     android:id="@+id/tvTimes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -111,13 +187,14 @@
                     android:layout_marginTop="30dp"
                     android:layout_marginEnd="30dp"
                     android:layout_marginBottom="30dp"
-                    android:text="Přehled časů"
+                    android:text="Gramatika a Čtení"
                     android:textAlignment="center"
                     android:textColor="#00FF23"
                     android:textSize="24sp" />
 
+
                 <TextView
-                    android:id="@+id/tvSentence5"
+                    android:id="@+id/tvSentence12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -130,7 +207,7 @@
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/tvSentence6"
+                    android:id="@+id/tvSentence13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -141,6 +218,210 @@
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvSentence14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="budoucí časy - používáme při popisování dějů, faktů a událostí, které se stanou v budoucnosti. Využijeme je také pro plánované i neplánované děje a předpovědi či spontánní rozhodnutí, pro která jsme se rozhodli během rozhovoru a která se stanou v budoucnu."
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvSentence15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="Pro překlad celých vět nebo textu využijte překladač v menu, který zvládá všechny časy."
+                    android:textAlignment="center"
+                    android:textColor="#FFEB3B"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvListening"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="Poslech"
+                    android:textAlignment="center"
+                    android:textColor="#00FF23"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvListening1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="Nahrávka 1 - big have no (velký mít ne)"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/start1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#E64CAF50"
+                    android:onClick="startSound1"
+                    android:text="Přehrát"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tvListening2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="Nahrávka 2 - can what where when how which than (moct co kde když jak který než)"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+                <Button
+                    android:id="@+id/start2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#E64CAF50"
+                    android:onClick="startSound2"
+                    android:text="Přehrát"
+                    android:textSize="25sp" />
+                <TextView
+                    android:id="@+id/tvListening3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="Nahrávka 3 - curly wavy straight round (kudrnatý vlnitý rovný kulatý)"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+                <Button
+                    android:id="@+id/start3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#E64CAF50"
+                    android:onClick="startSound3"
+                    android:text="Přehrát"
+                    android:textSize="25sp" />
+                <TextView
+                    android:id="@+id/tvListening4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="Nahrávka 4 - name friend meet and who (jméno přítel setkat a kdo)"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+                <Button
+                    android:id="@+id/start4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#E64CAF50"
+                    android:onClick="startSound4"
+                    android:text="Přehrát"
+                    android:textSize="25sp" />
+                <TextView
+                    android:id="@+id/tvListening5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:text="Nahrávka 5 - what when where which wife (co kdy kde která manželka)"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+                <Button
+                    android:id="@+id/start5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#E64CAF50"
+                    android:onClick="startSound5"
+                    android:text="Přehrát"
+                    android:textSize="25sp" />
+                <TextView
+                    android:id="@+id/tvSpeaking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="Mluvení"
+                    android:textAlignment="center"
+                    android:textColor="#00FF23"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/tvSpeaking2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Prostudujte si, co který znak znamená a jak se vyslovuje. (Fonetická abeceda)"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/fonetic" />
+
+                <TextView
+                    android:id="@+id/tvSpeaking3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Níže je fonetický přepis (výslovnost) slov, které jsou pro tuto aplikaci potřebné umět."
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/vyslovnost" />
+
                 <Button
                     android:id="@+id/btnPopUp"
                     style="@android:style/Widget.Button"

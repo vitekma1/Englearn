@@ -38,7 +38,7 @@ public class ReadingActivity extends AppCompatActivity {
     private int localScore = 20;
     private String valueScore = "0";
     private String valueScoreG = "0";
-    TextView tvTask,tvSentence;
+    TextView tvTask,tvSentence, tvTask2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +56,7 @@ public class ReadingActivity extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
         tvTask = findViewById(R.id.tvTask);
         tvSentence = findViewById(R.id.tvSentence);
+        tvTask2 = findViewById(R.id.tvTask2);
         btnA1 = findViewById(R.id.btnA1);
         btnA2 = findViewById(R.id.btnA2);
         btnA3 = findViewById(R.id.btnA3);
@@ -71,11 +72,11 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 2:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("zmenaM");
-                        tvSentence.setText("zmena");
+                        btnA1.setText("Mark Baker");
+                        btnA2.setText("Steve Roach");
+                        btnA3.setText("Carl Jung");
+                        btnA4.setText("None of the people in the text");
+                        tvTask2.setText("Věta - People have always collected because we need to stay alive.");
                         steps++;
                         break;
                     case 3:
@@ -92,11 +93,11 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 6:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("Mark Baker");
+                        btnA2.setText("Carl Jung");
+                        btnA3.setText("Werner Muensterberger");
+                        btnA4.setText("None of the people in the text");
+                        tvTask2.setText("Věta - Collecting links ordinary people to the lives of well-known people.");
                         steps++;
                         break;
                     case 7:
@@ -106,19 +107,6 @@ public class ReadingActivity extends AppCompatActivity {
                     case 8:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         if(localScore>0){localScore--;}
-                        break;
-                    case 9:
-                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
-                        break;
-                    case 10:
-                        Toast.makeText(ReadingActivity.this, "Dokončeno", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("posledni");
-                        btnA2.setText("posledni");
-                        btnA3.setText("posledni");
-                        btnA4.setText("posledni");
-                        complete = true;
-                        steps++;
                         break;
                 }
 
@@ -133,11 +121,11 @@ public class ReadingActivity extends AppCompatActivity {
                     case 1:
 
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("Mark Baker");
+                        btnA2.setText("Carl Jung");
+                        btnA3.setText("Philipp Bloom");
+                        btnA4.setText("None of the people in the text");
+                        tvTask2.setText("Věta - I collect because I enjoy trying to achieve something.");
                         steps++;
 
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
@@ -153,11 +141,11 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 4:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("Carl Jung");
+                        btnA2.setText("Mark Baker");
+                        btnA3.setText("Werner Muensterberger");
+                        btnA4.setText("Philipp Bloom");
+                        tvTask2.setText("Věta - People start collecting again when they can afford to buy special things.");
                         steps++;
                         break;
                     case 5:
@@ -173,14 +161,6 @@ public class ReadingActivity extends AppCompatActivity {
                         if(localScore>0){localScore--;}
                         break;
                     case 8:
-                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
-                        break;
-                    case 9:
-                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
-                        break;
-                    case 10:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         if(localScore>0){localScore--;}
                         break;
@@ -204,11 +184,11 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 3:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("Werner Muensterberger");
+                        btnA2.setText("Steve Roach");
+                        btnA3.setText("Philipp Bloom");
+                        btnA4.setText("None of the people in the text");
+                        tvTask2.setText("Věta - People collect because they want to be famous for something important.");
                         steps++;
                         break;
                     case 4:
@@ -228,19 +208,6 @@ public class ReadingActivity extends AppCompatActivity {
                         if(localScore>0){localScore--;}
                         break;
                     case 8:
-                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
-                        break;
-                    case 9:
-                        Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("predposledni");
-                        btnA2.setText("predposledni");
-                        btnA3.setText("predposledni");
-                        btnA4.setText("predposledni");
-                        tvSentence.setText("");
-                        steps++;
-                        break;
-                    case 10:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
                         if(localScore>0){localScore--;}
                         break;
@@ -272,11 +239,11 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 5:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("Steve Roach");
+                        btnA2.setText("Werner Muensterberger");
+                        btnA3.setText("Philipp Bloom");
+                        btnA4.setText("None of the people in the text");
+                        tvTask2.setText("Věta - Collecting gives people something to do during bad weather and cold or wet seasons.");
                         steps++;
                         break;
                     case 6:
@@ -285,29 +252,16 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 7:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("Carl Jung");
+                        btnA2.setText("Werner Muensterberger");
+                        btnA3.setText("Philipp Bloom");
+                        btnA4.setText("Mark Baker");
                         steps++;
                         break;
                     case 8:
-                        Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        Toast.makeText(ReadingActivity.this, "Dokončeno", Toast.LENGTH_SHORT).show();
+                        complete = true;
                         steps++;
-                        break;
-                    case 9:
-                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
-                        break;
-                    case 10:
-                        Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
                         break;
                 }
 
@@ -429,6 +383,7 @@ public class ReadingActivity extends AppCompatActivity {
                     valueTextSize = value;} else {valueTextSize = 0L;}
                 if(valueTextSize==2131231000){
                     tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    tvTask2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnA3.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
@@ -439,6 +394,7 @@ public class ReadingActivity extends AppCompatActivity {
                 }
                 if(valueTextSize==2131231001){
                     tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    tvTask2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnA3.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
@@ -449,6 +405,7 @@ public class ReadingActivity extends AppCompatActivity {
                 }
                 if(valueTextSize==2131231002){
                     tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    tvTask2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnA3.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);

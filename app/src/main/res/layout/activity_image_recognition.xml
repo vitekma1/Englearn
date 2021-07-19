@@ -41,7 +41,7 @@
             android:layout_marginBottom="10dp"
             android:text="Napište anglicky co vidíte na obrázku"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
+            android:textColor="#FFEB3B"
             android:textSize="24sp" />
 
         <EditText

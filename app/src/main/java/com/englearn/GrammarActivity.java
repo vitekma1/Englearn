@@ -65,11 +65,11 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 2:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("zmenaM");
-                        tvSentence.setText("zmena");
+                        btnA1.setText("you");
+                        btnA2.setText("you can");
+                        btnA3.setText("can you");
+                        btnA4.setText("do you can");
+                        tvSentence.setText("3) What time ____ pick me up?");
                         steps++;
                         break;
                     case 3:
@@ -86,11 +86,11 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 6:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("you are doing");
+                        btnA2.setText("do you are doing");
+                        btnA3.setText("are you");
+                        btnA4.setText("are you doing");
+                        tvSentence.setText("7) What ____ with the scissors?");
                         steps++;
                         break;
                     case 7:
@@ -107,10 +107,7 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 10:
                         Toast.makeText(GrammarActivity.this, "Dokončeno", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("posledni");
-                        btnA2.setText("posledni");
-                        btnA3.setText("posledni");
-                        btnA4.setText("posledni");
+
                         complete = true;
                         steps++;
                         break;
@@ -127,11 +124,11 @@ public class GrammarActivity extends AppCompatActivity {
                     case 1:
 
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("have you got");
+                        btnA2.setText("you have");
+                        btnA3.setText("have you");
+                        btnA4.setText("you have got");
+                        tvSentence.setText("2) How many brothers and sisters ____ ?");
                         steps++;
 
                         Toast.makeText(GrammarActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
@@ -147,11 +144,11 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 4:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("You saw");
+                        btnA2.setText("You did see");
+                        btnA3.setText("Did you saw");
+                        btnA4.setText("Did you see");
+                        tvSentence.setText("5) ____ John this morning?");
                         steps++;
                         break;
                     case 5:
@@ -198,11 +195,11 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 3:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("did Tim be");
+                        btnA2.setText("was Tim");
+                        btnA3.setText("Tim was");
+                        btnA4.setText("did Tim");
+                        tvSentence.setText("4) Where ____ last night?");
                         steps++;
                         break;
                     case 4:
@@ -227,11 +224,11 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 9:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("predposledni");
-                        btnA2.setText("predposledni");
-                        btnA3.setText("predposledni");
-                        btnA4.setText("predposledni");
-                        tvSentence.setText("");
+                        btnA1.setText("did Sandra invite");
+                        btnA2.setText("Sandra invited");
+                        btnA3.setText("Sandra did invite");
+                        btnA4.setText("Sandra did invited");
+                        tvSentence.setText("10) Who ____ to the party?");
                         steps++;
                         break;
                     case 10:
@@ -266,11 +263,11 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 5:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("did you put");
+                        btnA2.setText("you did put");
+                        btnA3.setText("put you");
+                        btnA4.setText("put");
+                        tvSentence.setText("6) Why ____ that box there?");
                         steps++;
                         break;
                     case 6:
@@ -279,20 +276,20 @@ public class GrammarActivity extends AppCompatActivity {
                         break;
                     case 7:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("she will make");
+                        btnA2.setText("make she");
+                        btnA3.setText("she make");
+                        btnA4.setText("will she make");
+                        tvSentence.setText("8) When ____ a decision?");
                         steps++;
                         break;
                     case 8:
                         Toast.makeText(GrammarActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                        btnA1.setText("");
-                        btnA2.setText("");
-                        btnA3.setText("");
-                        btnA4.setText("");
-                        tvSentence.setText("");
+                        btnA1.setText("I should call");
+                        btnA2.setText("do I should call");
+                        btnA3.setText("should i call");
+                        btnA4.setText("should do call");
+                        tvSentence.setText("9) What time ____ you tomorrow?");
                         steps++;
                         break;
                     case 9:

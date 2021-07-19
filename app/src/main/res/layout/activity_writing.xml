@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/p1"
+    android:background="@drawable/p2"
     tools:context=".WritingActivity">
 
     <LinearLayout
@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
+
         <TextView
             android:id="@+id/tvTask"
             android:layout_width="wrap_content"
@@ -28,7 +29,20 @@
             android:layout_marginTop="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="10dp"
-            android:text="Něco z writingu"
+            android:text="Dopište chybějící slovo"
+            android:textAlignment="center"
+            android:textColor="#FFEB3B"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvSentence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:text="1) How often ____ to the dentist?"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
@@ -41,7 +55,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="20dp"
             android:ems="10"
-            android:hint="Pište něco"
+            android:hint="Chybějící slovo v textu"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#FFFFFF"
             android:textColorHint="#FFFFFF"

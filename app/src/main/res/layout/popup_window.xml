@@ -7,19 +7,48 @@
     android:layout_marginEnd="15dp"
     android:background="#6DFFC107">
 
-    <TextView
-        android:id="@+id/tvPop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:background="#FFD658"
-        android:padding="10dp"
-        android:text="@string/help"
-        android:textColor="#000000"
-        android:textSize="24dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvPop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="#FFD658"
+                android:padding="10dp"
+                android:text="
+                Slovní zásoba - Napište na vyhrazené místo anglický překlad věci, kterou vidíte na obrázku a následně klikněte na zkontrolovat.
+
+                Gramatika - Klepněte na odpověď, která pasuje do věty.
+
+                Poslech - napište všechna slova z nahrávky oddělená mezerou(po úvodním slovu, kde se zmíní číslo nahrávky) například: house dog cat.
+
+                Mluvení - Přečtěte si slovo, které je psáno zeleným písmem, poté klepněte na začít mluvit a vyslovte dané slovo. Pokud vyslovíte slovo správně, vygeneruje se další, pokud špatně, musíte slovo vyslovit znovu. Tato lekce nemá bodové ohodnocení a je nekonečná.
+
+                Čtení - Přečtěte si text a následně vyberte klepnutím jméno, které v textu zmínilo dotazovanou větu. Po správné odpovědi bude následovat další věta.
+
+                Pokyny jsou v každé lekci žlutým písmem.
+
+                Pokud si nevíte s danou lekcí rady, zkuste v menu sekci výuka
+
+                Po dokončení lekce odejděte pomocí tlačítka menu. Za dokončení každé lekce získáte určitý počet bodů.
+
+                Za každou nesprávnou odpověď je stržen 1 bod z bodové odměny za lekci (nelze jít do mínusu). "
+                android:textColor="#000000"
+                android:textSize="24dp"
+                android:layout_centerHorizontal="true" />
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

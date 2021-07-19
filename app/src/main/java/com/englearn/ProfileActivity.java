@@ -63,21 +63,21 @@ public class ProfileActivity extends AppCompatActivity {
                 // tvTest.setText(value);
                 if (value!=null){
                     valueTextSize = value;} else {valueTextSize = 0L;}
-                if(valueTextSize==2131231000){
+                if(valueTextSize==2131230999){
                     btnNickname.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     nickname.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     textView7.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     textView8.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                 }
-                if(valueTextSize==2131231001){
+                if(valueTextSize==2131231000){
                     btnNickname.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     nickname.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     textView7.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     textView8.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                 }
-                if(valueTextSize==2131231002){
+                if(valueTextSize==2131231001){
                     btnNickname.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     nickname.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);

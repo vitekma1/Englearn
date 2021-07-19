@@ -124,7 +124,7 @@ public class TranslatorActivity extends AppCompatActivity {
                 // tvTest.setText(value);
                 if (value!=null){
                     valueTextSize = value;} else {valueTextSize = 0L;}
-                if(valueTextSize==2131231000){
+                if(valueTextSize==2131230999){
                     text.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     translatedText.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
@@ -136,7 +136,7 @@ public class TranslatorActivity extends AppCompatActivity {
                     tvtranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     textView7.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                 }
-                if(valueTextSize==2131231001){
+                if(valueTextSize==2131231000){
                     text.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     translatedText.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
@@ -148,7 +148,7 @@ public class TranslatorActivity extends AppCompatActivity {
                     tvtranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     textView7.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                 }
-                if(valueTextSize==2131231002){
+                if(valueTextSize==2131231001){
                     text.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     translatedText.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);

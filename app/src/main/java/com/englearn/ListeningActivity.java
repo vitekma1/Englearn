@@ -254,7 +254,7 @@ public class ListeningActivity extends AppCompatActivity {
                 // tvTest.setText(value);
                 if (value!=null){
                     valueTextSize = value;} else {valueTextSize = 0L;}
-                if(valueTextSize==2131231000){
+                if(valueTextSize==2131230999){
                     soundId.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
@@ -265,7 +265,7 @@ public class ListeningActivity extends AppCompatActivity {
                     tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
 
                 }
-                if(valueTextSize==2131231001){
+                if(valueTextSize==2131231000){
                     soundId.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
@@ -277,7 +277,7 @@ public class ListeningActivity extends AppCompatActivity {
 
 
                 }
-                if(valueTextSize==2131231002){
+                if(valueTextSize==2131231001){
                     soundId.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);

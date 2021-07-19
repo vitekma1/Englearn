@@ -327,7 +327,7 @@ public class HomeActivity extends AppCompatActivity {
                 // tvTest.setText(value);
                 if (value!=null){
                     valueTextSize = value;} else {valueTextSize = 0L;}
-                if(valueTextSize==2131231000){
+                if(valueTextSize==2131230999){
                     btnImages.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnGrammar1.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnScore.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
@@ -346,7 +346,7 @@ public class HomeActivity extends AppCompatActivity {
                     textView4.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     textView5.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                 }
-                if(valueTextSize==2131231001){
+                if(valueTextSize==2131231000){
                     btnImages.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnGrammar1.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnScore.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
@@ -365,7 +365,7 @@ public class HomeActivity extends AppCompatActivity {
                     textView4.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     textView5.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                 }
-                if(valueTextSize==2131231002){
+                if(valueTextSize==2131231001){
                     btnImages.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnImages.setPadding(12,17,12,20);
                     btnGrammar1.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);

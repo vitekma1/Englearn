@@ -5,7 +5,7 @@
     android:layout_marginStart="15dp"
     android:layout_marginTop="50dp"
     android:layout_marginEnd="15dp"
-    android:background="#6DFFC107">
+    android:background="#CCFFC107">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,40 +14,139 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvPop"
-                android:layout_width="wrap_content"
+                android:id="@+id/tvPop8"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="15dp"
-                android:background="#FFD658"
+                android:background="#8600FF04"
                 android:padding="10dp"
-                android:text="
-                Slovní zásoba - Napište na vyhrazené místo anglický překlad věci, kterou vidíte na obrázku a následně klikněte na zkontrolovat.
+                android:text="Nápověda"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="24dp" />
 
-                Gramatika - Klepněte na odpověď, která pasuje do věty.
+            <TextView
+                android:id="@+id/tvPop6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="#79C4FF"
+                android:padding="10dp"
+                android:text="Pokyny jsou v každé lekci žlutým písmem.
+                Pokud si nevíte s danou lekcí rady, zkuste v menu sekci výuka."
+                android:textColor="#000000"
+                android:textSize="24dp" />
 
-                Poslech - napište všechna slova z nahrávky oddělená mezerou(po úvodním slovu, kde se zmíní číslo nahrávky) například: house dog cat.
-
-                Mluvení - Přečtěte si slovo, které je psáno zeleným písmem, poté klepněte na začít mluvit a vyslovte dané slovo. Pokud vyslovíte slovo správně, vygeneruje se další, pokud špatně, musíte slovo vyslovit znovu. Tato lekce nemá bodové ohodnocení a je nekonečná.
-
-                Čtení - Přečtěte si text a následně vyberte klepnutím jméno, které v textu zmínilo dotazovanou větu. Po správné odpovědi bude následovat další věta.
-
-                Pokyny jsou v každé lekci žlutým písmem.
-
-                Pokud si nevíte s danou lekcí rady, zkuste v menu sekci výuka
-
-                Po dokončení lekce odejděte pomocí tlačítka menu. Za dokončení každé lekce získáte určitý počet bodů.
-
+            <TextView
+                android:id="@+id/tvPop7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="#FFFC58"
+                android:padding="10dp"
+                android:text="Po dokončení lekce odejděte pomocí tlačítka menu. Za dokončení každé lekce získáte určitý počet bodů.
                 Za každou nesprávnou odpověď je stržen 1 bod z bodové odměny za lekci (nelze jít do mínusu). "
                 android:textColor="#000000"
-                android:textSize="24dp"
-                android:layout_centerHorizontal="true" />
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tvPop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="#FFB458"
+                android:padding="10dp"
+                android:text="Slovní zásoba - Napište na vyhrazené místo anglický překlad věci, kterou vidíte na obrázku a následně klikněte na zkontrolovat."
+                android:textColor="#000000"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tvPop2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="#BFFF58"
+                android:padding="10dp"
+                android:text="Gramatika - Klepněte na odpověď, která pasuje do věty."
+                android:textColor="#000000"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tvPop3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="#58FFCA"
+                android:padding="10dp"
+                android:text="Poslech - napište všechna slova z nahrávky oddělená mezerou(po úvodním slovu, kde se zmíní číslo nahrávky) například: house dog cat."
+                android:textColor="#000000"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tvPop4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="#D787FF"
+                android:padding="10dp"
+                android:text="Mluvení - Přečtěte si slovo, které je psáno zeleným písmem, poté klepněte na začít mluvit a vyslovte dané slovo. Pokud vyslovíte slovo správně, vygeneruje se další, pokud špatně, musíte slovo vyslovit znovu. Tato lekce nemá bodové ohodnocení a je nekonečná."
+                android:textColor="#000000"
+                android:textSize="24dp" />
+
+            <TextView
+                android:id="@+id/tvPop5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="#FF8B8B"
+                android:padding="10dp"
+                android:text="Čtení - Přečtěte si text a následně vyberte klepnutím jméno, které v textu zmínilo dotazovanou větu. Po správné odpovědi bude následovat další věta."
+                android:textColor="#000000"
+                android:textSize="24dp" />
+
         </LinearLayout>
     </ScrollView>
 

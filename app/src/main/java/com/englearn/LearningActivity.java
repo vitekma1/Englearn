@@ -29,7 +29,7 @@ public class LearningActivity extends AppCompatActivity {
     private Button btnMenu,btnPopUp;
     private TextView tvTask, tvSentence,tvSentence2,tvSentence3,tvSentence4,tvSentence5,tvSentence6,tvSentence7,tvSentence8,tvSentence9,
             tvSentence10,tvSentence11,tvSentence12,tvSentence13,tvSentence14,tvSentence15,tvTimes, tvListening, tvListening1, tvListening2, tvListening3,
-    tvListening4, tvListening5, tvSpeaking, tvSpeaking2, tvSpeaking3;
+    tvListening4, tvListening5, tvSpeaking, tvSpeaking2, tvSpeaking3, tvSentence156;
     private String uid;
     MediaPlayer mp;
     @Override
@@ -38,6 +38,7 @@ public class LearningActivity extends AppCompatActivity {
         setContentView(R.layout.activity_learning);
         btnMenu = (Button)findViewById(R.id.btnMenu);
         tvTask = findViewById(R.id.tvTask);
+        tvSentence156 = findViewById(R.id.tvSentence156);
         tvSentence = findViewById(R.id.tvSentence);
         tvSentence2 = findViewById(R.id.tvSentence2);
         tvSentence3 = findViewById(R.id.tvSentence3);
@@ -148,6 +149,7 @@ public class LearningActivity extends AppCompatActivity {
                     tvSpeaking.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     tvSpeaking2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     tvSpeaking3.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                    tvSentence156.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
 
                 }
                 if(valueTextSize==2131231000){
@@ -179,6 +181,7 @@ public class LearningActivity extends AppCompatActivity {
                     tvSpeaking.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     tvSpeaking2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     tvSpeaking3.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                    tvSentence156.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                 }
                 if(valueTextSize==2131231001){
                     btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
@@ -209,6 +212,7 @@ public class LearningActivity extends AppCompatActivity {
                     tvSpeaking.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     tvSpeaking2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     tvSpeaking3.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                    tvSentence156.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                 }
             }
 

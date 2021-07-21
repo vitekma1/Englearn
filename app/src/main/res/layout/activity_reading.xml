@@ -44,32 +44,7 @@
                     android:layout_marginEnd="30dp"
                     android:layout_marginBottom="30dp"
                     android:text="Why do people collect?
-
-
-                    Petra Engels owns 19,571 erasers, Carol Vaughn has 1,221 bars of soap, and Ralf Shrőder has a collection of 14,502 packets of sugar. Many people love to collect things, but why? Psychologists and collectors have different opinions.
-
-
-
-                    The psychologist Carl Jung believed that collecting is part of our ancient human history. Thousands of years ago, humans collected nuts and berries. They kept them carefully and ate them when there was no food. The best collectors survived long cold winters or seasons without rain. Their genes passed to future generations. Nowadays, we still have a collecting instinct.
-
-
-                    Historian Philipp Bloom has a different opinion. He thinks collectors want to make something that will remain after their death. By bringing many similar items together, the collector gains historical importance. Sometimes their collections become museums or libraries, for example, Henry Huntington, who founded a library in Los Angeles to house his collection of books.
-
-
-
-                    Author Steve Roach thinks that people collect things to remember their childhood. Many children collect things, but few have enough money to buy the things they really want, and they lose interest. In later life, they remember their collections fondly. Now, they have enough money and opportunity to find special items, and they start collecting again. This way, they can re-live and enjoy their childhood years.
-
-
-
-                    Art collector, Werner Muensterberger, agrees that collecting is linked to childhood. But he believes we collect in order to feel safe and secure. While babies hold blankets or toys to feel safe when their mother isn’t there, adults collect things to stop feeling lonely or anxious.
-
-
-
-                    Autograph collector Mark Baker agrees that collecting is emotional, but he doesn’t collect to reduce anxiety. “For me, it’s the excitement,” he says. “I love trying to get a famous person’s autograph. Sometimes I succeed, and sometimes I fail. Also, by collecting autographs, I feel connected to famous people. I don’t just watch them on television. I actually meet them.”
-
-
-
-                    These are just a few reasons for collecting. Do you know any people with collections? Why do they collect?"
+                    Petra Engels owns 19,571 erasers, Carol Vaughn has 1,221 bars of soap, and Ralf Shrőder has a collection of 14,502 packets of sugar. Many people love to collect things, but why? Psychologists and collectors have different opinions. The psychologist Carl Jung believed that collecting is part of our ancient human history. Thousands of years ago, humans collected nuts and berries. They kept them carefully and ate them when there was no food. The best collectors survived long cold winters or seasons without rain. Their genes passed to future generations. Nowadays, we still have a collecting instinct. Historian Philipp Bloom has a different opinion. He thinks collectors want to make something that will remain after their death. By bringing many similar items together, the collector gains historical importance. Sometimes their collections become museums or libraries, for example, Henry Huntington, who founded a library in Los Angeles to house his collection of books. Author Steve Roach thinks that people collect things to remember their childhood. Many children collect things, but few have enough money to buy the things they really want, and they lose interest. In later life, they remember their collections fondly. Now, they have enough money and opportunity to find special items, and they start collecting again. This way, they can re-live and enjoy their childhood years. Art collector, Werner Muensterberger, agrees that collecting is linked to childhood. But he believes we collect in order to feel safe and secure. While babies hold blankets or toys to feel safe when their mother isn’t there, adults collect things to stop feeling lonely or anxious. Autograph collector Mark Baker agrees that collecting is emotional, but he doesn’t collect to reduce anxiety. “For me, it’s the excitement,” he says. “I love trying to get a famous person’s autograph. Sometimes I succeed, and sometimes I fail. Also, by collecting autographs, I feel connected to famous people. I don’t just watch them on television. I actually meet them.” These are just a few reasons for collecting. Do you know any people with collections? Why do they collect?"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
@@ -149,7 +124,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
                     android:fontFamily="sans-serif-black"
                     android:padding="12dp"

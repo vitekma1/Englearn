@@ -419,7 +419,7 @@ public class GrammarActivity extends AppCompatActivity {
                 // tvTest.setText(value);
                 if (value!=null){
                     valueTextSize = value;} else {valueTextSize = 0L;}
-                if(valueTextSize==2131230999){
+                if(valueTextSize==2131231004){
                     tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
@@ -429,7 +429,7 @@ public class GrammarActivity extends AppCompatActivity {
                     tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                 }
-                if(valueTextSize==2131231000){
+                if(valueTextSize==2131231005){
                     tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
@@ -439,7 +439,7 @@ public class GrammarActivity extends AppCompatActivity {
                     tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                     btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
                 }
-                if(valueTextSize==2131231001){
+                if(valueTextSize==2131231006){
                     tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
                     btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);

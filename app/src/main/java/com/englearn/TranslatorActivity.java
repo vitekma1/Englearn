@@ -24,24 +24,25 @@ import com.google.firebase.database.ValueEventListener;
 public class TranslatorActivity extends AppCompatActivity {
     private Long valueTextSize;
     EditText text;
-    TextView textView7,translatedText,fromLang,toLang,tvtranslate;
-    Button btnTranslate,btnChange, btnDelete, btnMenu;
+    TextView textView7, translatedText, fromLang, toLang, tvtranslate;
+    Button btnTranslate, btnChange, btnDelete, btnMenu;
     int count = 0;
     private String uid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_translator);
-        btnChange=findViewById(R.id.btnChange);
-        text=findViewById(R.id.text);
-        fromLang=findViewById(R.id.from_lang);
-        toLang=findViewById(R.id.to_lang);
-        translatedText=findViewById(R.id.translated_text);
-        tvtranslate=findViewById(R.id.tvtranslate);
-        textView7=findViewById(R.id.textView7);
-        btnTranslate=findViewById(R.id.btnTranslate);
-        btnDelete=findViewById(R.id.btnDelete);
-        btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnChange = findViewById(R.id.btnChange);
+        text = findViewById(R.id.text);
+        fromLang = findViewById(R.id.from_lang);
+        toLang = findViewById(R.id.to_lang);
+        translatedText = findViewById(R.id.translated_text);
+        tvtranslate = findViewById(R.id.tvtranslate);
+        textView7 = findViewById(R.id.textView7);
+        btnTranslate = findViewById(R.id.btnTranslate);
+        btnDelete = findViewById(R.id.btnDelete);
+        btnMenu = (Button) findViewById(R.id.btnMenu);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,16 +62,16 @@ public class TranslatorActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-            if(count==1){
-                count = 0;
-                fromLang.setText("Z - Čeština");
-                toLang.setText("Do - Angličtina");
-            }else{
-                count = 1;
-                fromLang.setText("Z - Angličtina");
-                toLang.setText("Do - Čeština");
+                if (count == 1) {
+                    count = 0;
+                    fromLang.setText("Z - Čeština");
+                    toLang.setText("Do - Angličtina");
+                } else {
+                    count = 1;
+                    fromLang.setText("Z - Angličtina");
+                    toLang.setText("Do - Čeština");
 
-            }
+                }
 
             }
 
@@ -78,7 +79,7 @@ public class TranslatorActivity extends AppCompatActivity {
         btnTranslate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                translate_api translate=new translate_api();
+                translate_api translate = new translate_api();
                 translate.setOnTranslationCompleteListener(new translate_api.OnTranslationCompleteListener() {
                     @Override
                     public void onStartTranslation() {
@@ -96,10 +97,10 @@ public class TranslatorActivity extends AppCompatActivity {
 
                     }
                 });
-                if(count==0){
-                    translate.execute(text.getText().toString(),"cs","en");
-                }else{
-                    translate.execute(text.getText().toString(),"en","cs");
+                if (count == 0) {
+                    translate.execute(text.getText().toString(), "cs", "en");
+                } else {
+                    translate.execute(text.getText().toString(), "en", "cs");
                 }
 
             }
@@ -109,12 +110,11 @@ public class TranslatorActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             uid = user.getUid();
-        }
-        else{
+        } else {
             uid = "error";
         }
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRefTextSize = database.getReference(uid+"textSize");
+        DatabaseReference myRefTextSize = database.getReference(uid + "textSize");
         myRefTextSize.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -122,43 +122,46 @@ public class TranslatorActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 Long value = dataSnapshot.getValue(Long.class);
                 // tvTest.setText(value);
-                if (value!=null){
-                    valueTextSize = value;} else {valueTextSize = 0L;}
-                if(valueTextSize==2131230999){
-                    text.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    translatedText.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    fromLang.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    toLang.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnTranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnChange.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnDelete.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvtranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    textView7.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                if (value != null) {
+                    valueTextSize = value;
+                } else {
+                    valueTextSize = 0L;
                 }
-                if(valueTextSize==2131231000){
-                    text.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    translatedText.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    fromLang.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    toLang.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnTranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnChange.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnDelete.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvtranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    textView7.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                if (valueTextSize == 2131231004) {
+                    text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    translatedText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    fromLang.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    toLang.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnTranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnChange.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnDelete.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvtranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    textView7.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
                 }
-                if(valueTextSize==2131231001){
-                    text.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    translatedText.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    fromLang.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    toLang.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnTranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnChange.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnDelete.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvtranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    textView7.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                if (valueTextSize == 2131231005) {
+                    text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    translatedText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    fromLang.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    toLang.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnTranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnChange.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnDelete.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvtranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    textView7.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                }
+                if (valueTextSize == 2131231006) {
+                    text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    translatedText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    fromLang.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    toLang.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnTranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnChange.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnDelete.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvtranslate.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    textView7.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
                 }
             }
 

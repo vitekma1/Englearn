@@ -34,20 +34,21 @@ import java.util.Random;
 import static java.lang.Integer.parseInt;
 
 public class RecognizeActivity extends AppCompatActivity {
-    TextView tvResult,tvTask,tvHeadline;
-    Button btnMenu,btnPopUp, buttonzm;
+    TextView tvResult, tvTask, tvHeadline;
+    Button btnMenu, btnPopUp, buttonzm;
     private Long valueTextSize;
     private String uid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recognize);
         tvResult = findViewById(R.id.tvResult);
         tvTask = findViewById(R.id.tvTask);
-        btnMenu = (Button)findViewById(R.id.btnMenu);
-        btnPopUp = (Button)findViewById(R.id.btnPopUp);
+        btnMenu = (Button) findViewById(R.id.btnMenu);
+        btnPopUp = (Button) findViewById(R.id.btnPopUp);
         tvHeadline = findViewById(R.id.tvHeadline);
-        buttonzm = (Button)findViewById(R.id.buttonzm);
+        buttonzm = (Button) findViewById(R.id.buttonzm);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +93,8 @@ public class RecognizeActivity extends AppCompatActivity {
                         popupWindow.dismiss();
                         return true;
                     }
-                });}
+                });
+            }
 
         });
 
@@ -100,12 +102,11 @@ public class RecognizeActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             uid = user.getUid();
-        }
-        else{
+        } else {
             uid = "error";
         }
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRefTextSize = database.getReference(uid+"textSize");
+        DatabaseReference myRefTextSize = database.getReference(uid + "textSize");
         myRefTextSize.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -113,31 +114,34 @@ public class RecognizeActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 Long value = dataSnapshot.getValue(Long.class);
                 // tvTest.setText(value);
-                if (value!=null){
-                    valueTextSize = value;} else {valueTextSize = 0L;}
-                if(valueTextSize==2131230999){
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvResult.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvHeadline.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    buttonzm.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                if (value != null) {
+                    valueTextSize = value;
+                } else {
+                    valueTextSize = 0L;
                 }
-                if(valueTextSize==2131231000){
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvResult.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvHeadline.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    buttonzm.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                if (valueTextSize == 2131231004) {
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvResult.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvHeadline.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    buttonzm.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
                 }
-                if(valueTextSize==2131231001){
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvResult.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvHeadline.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    buttonzm.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                if (valueTextSize == 2131231005) {
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvResult.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvHeadline.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    buttonzm.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                }
+                if (valueTextSize == 2131231006) {
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvResult.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvHeadline.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    buttonzm.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
                 }
             }
 
@@ -149,15 +153,15 @@ public class RecognizeActivity extends AppCompatActivity {
         });
     }
 
-    public void getSpeechInput (View v){
+    public void getSpeechInput(View v) {
         Intent i = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         i.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
 
-        if(i.resolveActivity(getPackageManager()) != null){
+        if (i.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(i, 10);
-        } else{
-            Toast.makeText(this,"Vaše zařízení nepodporuje zvukový vstup", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Vaše zařízení nepodporuje zvukový vstup", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -165,20 +169,20 @@ public class RecognizeActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        switch(requestCode) {
+        switch (requestCode) {
             case 10:
-                if (resultCode == RESULT_OK && data!=null){
+                if (resultCode == RESULT_OK && data != null) {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    tvResult.setText(result.get(result.size()-1));
-                    if(tvResult.getText().toString().equals(tvTask.getText().toString()) ){
-                        Toast.makeText(this,"Správně, pokračujte dalším slovem", Toast.LENGTH_SHORT).show();
-                        tvResult.setTextColor(Color.rgb(0,200,0));
+                    tvResult.setText(result.get(result.size() - 1));
+                    if (tvResult.getText().toString().equals(tvTask.getText().toString())) {
+                        Toast.makeText(this, "Správně, pokračujte dalším slovem", Toast.LENGTH_SHORT).show();
+                        tvResult.setTextColor(Color.rgb(0, 200, 0));
                         Random generate = new Random();
-                        String[] words = {"Welcome", "Car", "Window", "Tiger", "Pen", "Computer","Mobile","Hello","Goodbye","Queen","King","Room","Morning","Why","Which","Who", "Can","Clean","Long","Short"};
+                        String[] words = {"Welcome", "Car", "Window", "Tiger", "Pen", "Computer", "Mobile", "Hello", "Goodbye", "Queen", "King", "Room", "Morning", "Why", "Which", "Who", "Can", "Clean", "Long", "Short"};
                         tvTask.setText(words[generate.nextInt(20)]);
-                    } else{
-                        Toast.makeText(this,"Špatně", Toast.LENGTH_SHORT).show();
-                        tvResult.setTextColor(Color.rgb(200,0,0));
+                    } else {
+                        Toast.makeText(this, "Špatně", Toast.LENGTH_SHORT).show();
+                        tvResult.setTextColor(Color.rgb(200, 0, 0));
                     }
                 }
                 break;

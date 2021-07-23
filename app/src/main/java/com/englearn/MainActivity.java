@@ -36,31 +36,28 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String email = emailId.getText().toString();
                 String pwd = password.getText().toString();
-                if(email.isEmpty()){
+                if (email.isEmpty()) {
                     emailId.setError("Prosím zadejte emailovou adresu");
                     emailId.requestFocus();
-                }
-                else if (pwd.isEmpty()){
+                } else if (pwd.isEmpty()) {
                     password.setError("Prosím zadejte heslo");
                     password.requestFocus();
-                }
-                else if (email.isEmpty() && pwd.isEmpty()){
+                } else if (email.isEmpty() && pwd.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Vyplnte udaje", Toast.LENGTH_SHORT).show();
-                }
-                else if (!(email.isEmpty() && pwd.isEmpty())){
+                } else if (!(email.isEmpty() && pwd.isEmpty())) {
                     mFirebaseAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(!task.isSuccessful()){
+                            if (!task.isSuccessful()) {
                                 Toast.makeText(MainActivity.this, "Registrane neproběhla úspěšně, zkuste to prosím znovu", Toast.LENGTH_SHORT).show();
-                            }
-                            else{
+                            } else {
                                 startActivity(new Intent(MainActivity.this, HomeActivity.class));
                             }
                         }
                     });
+                } else {
+                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
                 }
-                else{Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();}
             }
         });
 

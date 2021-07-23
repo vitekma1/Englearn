@@ -27,7 +27,6 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,52 +42,47 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
-                if(mFirebaseUser != null){
+                if (mFirebaseUser != null) {
 
                     Intent i = new Intent(LoginActivity.this, HomeActivity.class);
-                }
-                else{
+                } else {
                     Toast.makeText(LoginActivity.this, "Prosim prihlaste se", Toast.LENGTH_SHORT).show();
                 }
             }
         };
 
-        btnSignIn.setOnClickListener(new View.OnClickListener(){
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                        String email = emailId.getText().toString();
-                        String pwd = password.getText().toString();
-                        if(email.isEmpty()){
-                            emailId.setError("Prosím zadejte emailovou adresu");
-                            emailId.requestFocus();
+                String email = emailId.getText().toString();
+                String pwd = password.getText().toString();
+                if (email.isEmpty()) {
+                    emailId.setError("Prosím zadejte emailovou adresu");
+                    emailId.requestFocus();
+                } else if (pwd.isEmpty()) {
+                    password.setError("Prosím zadejte heslo");
+                    password.requestFocus();
+                } else if (email.isEmpty() && pwd.isEmpty()) {
+                    Toast.makeText(LoginActivity.this, "Vyplnte udaje", Toast.LENGTH_SHORT).show();
+                } else if (!(email.isEmpty() && pwd.isEmpty())) {
+                    mFirebaseAuth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(LoginActivity.this, "Login Error, prosím zkuste to znovu", Toast.LENGTH_SHORT).show();
+                            } else {
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                String uid = user.getUid();
+                                Intent intToHome = new Intent(LoginActivity.this, HomeActivity.class);
+                                intToHome.putExtra("UID", uid);
+                                Toast.makeText(LoginActivity.this, "Prihlaseni probehlo uspesne", Toast.LENGTH_SHORT).show();
+                                startActivity(intToHome);
+                            }
                         }
-                        else if (pwd.isEmpty()){
-                            password.setError("Prosím zadejte heslo");
-                            password.requestFocus();
-                        }
-                        else if (email.isEmpty() && pwd.isEmpty()){
-                            Toast.makeText(LoginActivity.this, "Vyplnte udaje", Toast.LENGTH_SHORT).show();
-                        }
-                        else if (!(email.isEmpty() && pwd.isEmpty())){
-                            mFirebaseAuth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if(!task.isSuccessful()){
-                                        Toast.makeText(LoginActivity.this, "Login Error, prosím zkuste to znovu", Toast.LENGTH_SHORT).show();
-                                    }
-                                    else{
-                                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                        String uid = user.getUid();
-                                        Intent intToHome = new Intent(LoginActivity.this, HomeActivity.class);
-                                        intToHome.putExtra("UID", uid);
-                                        Toast.makeText(LoginActivity.this, "Prihlaseni probehlo uspesne", Toast.LENGTH_SHORT).show();
-                                        startActivity(intToHome);
-                                    }
-                                }
-                            });
-                        }
-                        else{Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                    }
+                    });
+                } else {
+                    Toast.makeText(LoginActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

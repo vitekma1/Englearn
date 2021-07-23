@@ -24,6 +24,7 @@ public class SettingsActivity extends AppCompatActivity {
     private RadioButton radioButton;
     private Button btnSettings, btnMenu;
     private String uid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +35,10 @@ public class SettingsActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             uid = user.getUid();
-        }
-        else{
+        } else {
             uid = "error";
         }
-        btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnMenu = (Button) findViewById(R.id.btnMenu);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,9 +66,9 @@ public class SettingsActivity extends AppCompatActivity {
                 radioButton = (RadioButton) findViewById(selectedId);
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference(uid+"textSize");
+                DatabaseReference myRef = database.getReference(uid + "textSize");
                 myRef.setValue(radioButton.getId());
-                DatabaseReference myRef2 = database.getReference(uid+"settings");
+                DatabaseReference myRef2 = database.getReference(uid + "settings");
                 myRef2.setValue("done");
 
                 Toast.makeText(SettingsActivity.this, "Velikost písma nastavena", Toast.LENGTH_SHORT).show();

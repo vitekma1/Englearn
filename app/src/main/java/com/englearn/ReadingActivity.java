@@ -28,7 +28,7 @@ import static java.lang.Integer.parseInt;
 
 public class ReadingActivity extends AppCompatActivity {
 
-    private Button btnMenu,btnPopUp,btnA1,btnA2,btnA3,btnA4;
+    private Button btnMenu, btnPopUp, btnA1, btnA2, btnA3, btnA4;
     int steps = 1;
     FirebaseAuth mFirebaseAuth;
     private Long valueTextSize;
@@ -38,12 +38,13 @@ public class ReadingActivity extends AppCompatActivity {
     private int localScore = 20;
     private String valueScore = "0";
     private String valueScoreG = "0";
-    TextView tvTask,tvSentence, tvTask2;
+    TextView tvTask, tvSentence, tvTask2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reading);
-        btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnMenu = (Button) findViewById(R.id.btnMenu);
         btnPopUp = findViewById(R.id.btnPopUp);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
@@ -65,10 +66,12 @@ public class ReadingActivity extends AppCompatActivity {
         btnA1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch(steps) {
+                switch (steps) {
                     case 1:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 2:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -81,15 +84,21 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 3:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 4:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 5:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 6:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -102,11 +111,15 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 7:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 8:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                 }
 
@@ -117,7 +130,7 @@ public class ReadingActivity extends AppCompatActivity {
         btnA2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch(steps) {
+                switch (steps) {
                     case 1:
 
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -133,11 +146,15 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 2:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 3:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 4:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -150,19 +167,27 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 5:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 6:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 7:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 8:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                 }
 
@@ -173,14 +198,18 @@ public class ReadingActivity extends AppCompatActivity {
         btnA3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch(steps) {
+                switch (steps) {
                     case 1:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 2:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 3:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -193,23 +222,33 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 4:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 5:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 6:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 7:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 8:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                 }
 
@@ -220,22 +259,30 @@ public class ReadingActivity extends AppCompatActivity {
         btnA4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                switch(steps) {
+                switch (steps) {
                     case 1:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 2:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 3:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 4:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 5:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -248,7 +295,9 @@ public class ReadingActivity extends AppCompatActivity {
                         break;
                     case 6:
                         Toast.makeText(ReadingActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                        if(localScore>0){localScore--;}
+                        if (localScore > 0) {
+                            localScore--;
+                        }
                         break;
                     case 7:
                         Toast.makeText(ReadingActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
@@ -272,25 +321,24 @@ public class ReadingActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             uid = user.getUid();
-        }
-        else{
+        } else {
             uid = "error";
         }
-        btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnMenu = (Button) findViewById(R.id.btnMenu);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (complete){
+                if (complete) {
                     // Write a message to the database
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef = database.getReference(uid+"reading1");
+                    DatabaseReference myRef = database.getReference(uid + "reading1");
                     myRef.setValue("done");
-                    DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    int score = parseInt(valueScore)+localScore;
+                    DatabaseReference myRefScore = database.getReference(uid + "scoreTotal");
+                    int score = parseInt(valueScore) + localScore;
                     myRefScore.setValue(String.valueOf(score));
-                    DatabaseReference myRefScoreG = database.getReference(uid+"scoreReading");
-                    int scoreG = parseInt(valueScoreG)+localScore;
+                    DatabaseReference myRefScoreG = database.getReference(uid + "scoreReading");
+                    int scoreG = parseInt(valueScoreG) + localScore;
                     myRefScoreG.setValue(String.valueOf(scoreG));
 
                 }
@@ -299,7 +347,7 @@ public class ReadingActivity extends AppCompatActivity {
             }
         });
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
+        DatabaseReference myRefScore = database.getReference(uid + "scoreTotal");
         myRefScore.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -307,11 +355,13 @@ public class ReadingActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                 // tvTest.setText(value);
-                if (value!=null){
-                    valueScore = value;}else{
+                if (value != null) {
+                    valueScore = value;
+                } else {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    myRefScore.setValue("0");}
+                    DatabaseReference myRefScore = database.getReference(uid + "scoreTotal");
+                    myRefScore.setValue("0");
+                }
             }
 
             @Override
@@ -320,7 +370,7 @@ public class ReadingActivity extends AppCompatActivity {
                 Log.w("test", "Failed to read value.", error.toException());
             }
         });
-        DatabaseReference myRefScoreR = database.getReference(uid+"scoreReading");
+        DatabaseReference myRefScoreR = database.getReference(uid + "scoreReading");
         myRefScoreR.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -328,11 +378,13 @@ public class ReadingActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                 // tvTest.setText(value);
-                if (value!=null){
-                    valueScoreG = value;}else{
+                if (value != null) {
+                    valueScoreG = value;
+                } else {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRefScore = database.getReference(uid+"scoreReading");
-                    myRefScore.setValue("0");}
+                    DatabaseReference myRefScore = database.getReference(uid + "scoreReading");
+                    myRefScore.setValue("0");
+                }
             }
 
             @Override
@@ -367,11 +419,12 @@ public class ReadingActivity extends AppCompatActivity {
                         popupWindow.dismiss();
                         return true;
                     }
-                });}
+                });
+            }
 
         });
 
-        DatabaseReference myRefTextSize = database.getReference(uid+"textSize");
+        DatabaseReference myRefTextSize = database.getReference(uid + "textSize");
         myRefTextSize.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -379,40 +432,43 @@ public class ReadingActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 Long value = dataSnapshot.getValue(Long.class);
                 // tvTest.setText(value);
-                if (value!=null){
-                    valueTextSize = value;} else {valueTextSize = 0L;}
-                if(valueTextSize==2131230999){
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvTask2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnA3.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnA4.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                if (value != null) {
+                    valueTextSize = value;
+                } else {
+                    valueTextSize = 0L;
                 }
-                if(valueTextSize==2131231000){
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvTask2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnA3.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnA4.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                if (valueTextSize == 2131231004) {
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvTask2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnA3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnA4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
                 }
-                if(valueTextSize==2131231001){
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvTask2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnA3.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnA4.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                if (valueTextSize == 2131231005) {
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvTask2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnA3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnA4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                }
+                if (valueTextSize == 2131231006) {
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvTask2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnA1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnA2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnA3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnA4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
                 }
             }
 

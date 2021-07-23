@@ -11,6 +11,7 @@ import cz.msebera.android.httpclient.StatusLine;
 import cz.msebera.android.httpclient.client.HttpClient;
 import cz.msebera.android.httpclient.client.methods.HttpGet;
 import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
+
 import org.json.JSONArray;
 
 import java.io.ByteArrayOutputStream;
@@ -19,6 +20,7 @@ import java.net.URLEncoder;
 
 public class translate_api extends AsyncTask<String, String, String> {
     private OnTranslationCompleteListener listener;
+
     @Override
     protected String doInBackground(String... strings) {
         String[] strArr = (String[]) strings;
@@ -53,26 +55,32 @@ public class translate_api extends AsyncTask<String, String, String> {
             execute.getEntity().getContent().close();
             throw new IOException(statusLine.getReasonPhrase());
         } catch (Exception e) {
-            Log.e("translate_api",e.getMessage());
+            Log.e("translate_api", e.getMessage());
             listener.onError(e);
             return str;
         }
     }
+
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
         listener.onStartTranslation();
     }
+
     @Override
     protected void onPostExecute(String text) {
         listener.onCompleted(text);
     }
-    public interface OnTranslationCompleteListener{
+
+    public interface OnTranslationCompleteListener {
         void onStartTranslation();
+
         void onCompleted(String text);
+
         void onError(Exception e);
     }
-    public void setOnTranslationCompleteListener(OnTranslationCompleteListener listener){
-        this.listener=listener;
+
+    public void setOnTranslationCompleteListener(OnTranslationCompleteListener listener) {
+        this.listener = listener;
     }
 }

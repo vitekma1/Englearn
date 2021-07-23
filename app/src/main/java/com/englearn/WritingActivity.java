@@ -27,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import static java.lang.Integer.parseInt;
 
 public class WritingActivity extends AppCompatActivity {
-    private Button btnPopUp,btnMenu,btnCheck;
+    private Button btnPopUp, btnMenu, btnCheck;
     private String uid;
     private boolean complete = false;
     private TextView tvTask;
@@ -51,11 +51,10 @@ public class WritingActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             uid = user.getUid();
-        }
-        else{
+        } else {
             uid = "error";
         }
-        DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
+        DatabaseReference myRefScore = database.getReference(uid + "scoreTotal");
         myRefScore.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -63,11 +62,13 @@ public class WritingActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                 // tvTest.setText(value);
-                if (value!=null){
-                    valueScore = value;}else{
+                if (value != null) {
+                    valueScore = value;
+                } else {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    myRefScore.setValue("0");}
+                    DatabaseReference myRefScore = database.getReference(uid + "scoreTotal");
+                    myRefScore.setValue("0");
+                }
             }
 
             @Override
@@ -77,7 +78,7 @@ public class WritingActivity extends AppCompatActivity {
             }
         });
 
-        DatabaseReference myRefScoreI = database.getReference(uid+"scoreWriting");
+        DatabaseReference myRefScoreI = database.getReference(uid + "scoreWriting");
         myRefScoreI.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -85,11 +86,13 @@ public class WritingActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                 // tvTest.setText(value);
-                if (value!=null){
-                    valueScoreW = value;}else{
+                if (value != null) {
+                    valueScoreW = value;
+                } else {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRefScore = database.getReference(uid+"scoreWriting");
-                    myRefScore.setValue("0");}
+                    DatabaseReference myRefScore = database.getReference(uid + "scoreWriting");
+                    myRefScore.setValue("0");
+                }
             }
 
             @Override
@@ -98,21 +101,21 @@ public class WritingActivity extends AppCompatActivity {
                 Log.w("test", "Failed to read value.", error.toException());
             }
         });
-        btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnMenu = (Button) findViewById(R.id.btnMenu);
 
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (complete){
+                if (complete) {
                     // Write a message to the database
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef = database.getReference(uid+"writing");
+                    DatabaseReference myRef = database.getReference(uid + "writing");
                     myRef.setValue("done");
-                    DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    int score = parseInt(valueScore)+10;
+                    DatabaseReference myRefScore = database.getReference(uid + "scoreTotal");
+                    int score = parseInt(valueScore) + 10;
                     myRefScore.setValue(String.valueOf(score));
-                    DatabaseReference myRefScoreI = database.getReference(uid+"scoreWriting");
-                    int scoreI = parseInt(valueScoreW)+10;
+                    DatabaseReference myRefScoreI = database.getReference(uid + "scoreWriting");
+                    int scoreI = parseInt(valueScoreW) + 10;
                     myRefScoreI.setValue(String.valueOf(scoreI));
 
                 }
@@ -145,11 +148,12 @@ public class WritingActivity extends AppCompatActivity {
                         popupWindow.dismiss();
                         return true;
                     }
-                });}
+                });
+            }
 
         });
 
-        DatabaseReference myRefTextSize = database.getReference(uid+"textSize");
+        DatabaseReference myRefTextSize = database.getReference(uid + "textSize");
         myRefTextSize.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -157,28 +161,31 @@ public class WritingActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 Long value = dataSnapshot.getValue(Long.class);
                 // tvTest.setText(value);
-                if (value!=null){
-                    valueTextSize = value;} else {valueTextSize = 0L;}
-                if(valueTextSize==2131230999){
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    animalId.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                if (value != null) {
+                    valueTextSize = value;
+                } else {
+                    valueTextSize = 0L;
                 }
-                if(valueTextSize==2131231000){
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    animalId.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                if (valueTextSize == 2131231004) {
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    animalId.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
                 }
-                if(valueTextSize==2131231001){
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    animalId.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                if (valueTextSize == 2131231005) {
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    animalId.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                }
+                if (valueTextSize == 2131231006) {
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    animalId.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
                 }
             }
 

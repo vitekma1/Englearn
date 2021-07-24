@@ -4,19 +4,16 @@ package com.englearn;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import cz.msebera.android.httpclient.Header;
-import cz.msebera.android.httpclient.HttpHost;
-import cz.msebera.android.httpclient.HttpResponse;
-import cz.msebera.android.httpclient.StatusLine;
-import cz.msebera.android.httpclient.client.HttpClient;
-import cz.msebera.android.httpclient.client.methods.HttpGet;
-import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
-
 import org.json.JSONArray;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URLEncoder;
+
+import cz.msebera.android.httpclient.HttpResponse;
+import cz.msebera.android.httpclient.StatusLine;
+import cz.msebera.android.httpclient.client.methods.HttpGet;
+import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
 
 public class translate_api extends AsyncTask<String, String, String> {
     private OnTranslationCompleteListener listener;

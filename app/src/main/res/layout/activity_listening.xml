@@ -1,129 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListeningActivity"
-    android:background="@drawable/p2">
+    android:background="@drawable/p2"
+    tools:context=".ListeningActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="65dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="65dp"
-            android:text="Poslech 1/5"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/start"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="5dp"
-            android:background="#E64CAF50"
-            android:onClick="startSound"
-            android:text="Přehrát"
-            android:textSize="25sp" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/stop"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#D5FF2222"
-            android:onClick="stopSound"
-            android:text="Stop"
-            android:textSize="25sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvTask"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="20dp"
-            android:text="Napište slova, která slyšíte oddělené mezerou"
-            android:textAlignment="center"
-            android:textColor="#FFEB3B"
-            android:textSize="25sp" />
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="65dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="65dp"
+                    android:text="Poslech 1/5"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25sp" />
 
-        <EditText
-            android:id="@+id/soundId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="55dp"
-            android:layout_marginEnd="55dp"
-            android:layout_marginBottom="20dp"
-            android:ems="10"
-            android:hint="Slova"
-            android:textColor="#FFFFFF"
-            android:textColorHighlight="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:textColorLink="#FFFFFF"
-            android:textSize="25sp" />
-        <Button
-            android:id="@+id/btnCheck"
-            style="@android:style/Widget.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-            android:fontFamily="sans-serif-black"
-            android:padding="12dp"
-            android:text="Zkontrolovat"
-            android:textAlignment="center"
-            android:textColor="#03A9F4"
-            android:textSize="24dp" />
+                <Button
+                    android:id="@+id/start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#E64CAF50"
+                    android:onClick="startSound"
+                    android:text="Přehrát"
+                    android:textSize="25sp" />
 
-        <Button
-            android:id="@+id/btnPopUp"
-            style="@android:style/Widget.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-            android:fontFamily="sans-serif-black"
-            android:padding="12dp"
-            android:text="Nápověda"
-            android:textAlignment="center"
-            android:textColor="#FF9800"
-            android:textSize="24dp" />
-        <Button
-            android:id="@+id/btnMenu"
-            style="@android:style/Widget.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
-            android:fontFamily="sans-serif-black"
-            android:padding="12dp"
-            android:text="Menu"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="24dp" />
-    </LinearLayout>
-    </ScrollView>
+                <Button
+                    android:id="@+id/stop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#D5FF2222"
+                    android:onClick="stopSound"
+                    android:text="Stop"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tvTask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Napište slova, která slyšíte oddělené mezerou"
+                    android:textAlignment="center"
+                    android:textColor="#FFEB3B"
+                    android:textSize="25sp" />
+
+                <EditText
+                    android:id="@+id/soundId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginEnd="55dp"
+                    android:layout_marginBottom="20dp"
+                    android:ems="10"
+                    android:hint="Slova"
+                    android:textColor="#FFFFFF"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textColorLink="#FFFFFF"
+                    android:textSize="25sp" />
+
+                <Button
+                    android:id="@+id/btnCheck"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="Zkontrolovat"
+                    android:textAlignment="center"
+                    android:textColor="#03A9F4"
+                    android:textSize="24dp" />
+
+                <Button
+                    android:id="@+id/btnPopUp"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="Nápověda"
+                    android:textAlignment="center"
+                    android:textColor="#FF9800"
+                    android:textSize="24dp" />
+
+                <Button
+                    android:id="@+id/btnMenu"
+                    style="@android:style/Widget.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/common_google_signin_btn_icon_dark_normal_background"
+                    android:fontFamily="sans-serif-black"
+                    android:padding="12dp"
+                    android:text="Menu"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="24dp" />
+            </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,5 @@
 package com.englearn;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +7,8 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -218,34 +218,6 @@ public class HomeActivity extends AppCompatActivity {
                 Log.w("test", "Failed to read value.", error.toException());
             }
         });
-/*
-        // Write a message to the database
-        DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-
-        // Read from the database
-        myRefScore.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                // tvTest.setText(value);
-                if (value!=null){
-                        tvScore.setText(value);}else{
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    myRefScore.setValue("0");
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w("test", "Failed to read value.", error.toException());
-            }
-        });
-*/
-
 
         btnImages.setOnClickListener(new View.OnClickListener() {
             @Override

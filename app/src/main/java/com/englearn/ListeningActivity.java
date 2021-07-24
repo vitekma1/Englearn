@@ -1,7 +1,5 @@
 package com.englearn;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
@@ -19,6 +17,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -34,20 +34,21 @@ public class ListeningActivity extends AppCompatActivity {
     MediaPlayer mp;
     EditText soundId;
     int steps = 1;
-    TextView textView2,tvTask;
+    TextView textView2, tvTask;
     private Long valueTextSize;
     private String uid;
     private String valueScore = "0";
     private String valueScoreL = "0";
     private int localScore = 25;
     private boolean complete = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listening);
         soundId = findViewById(R.id.soundId);
         btnPopUp = findViewById(R.id.btnPopUp);
-        btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnMenu = (Button) findViewById(R.id.btnMenu);
         btnCheck = findViewById(R.id.btnCheck);
         tvTask = findViewById(R.id.tvTask);
         textView2 = findViewById(R.id.textView2);
@@ -58,92 +59,102 @@ public class ListeningActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String name = soundId.getText().toString();
-                if(name.isEmpty()){
+                if (name.isEmpty()) {
                     soundId.setError("Zadejte slovo");
                     soundId.requestFocus();
-                }else {
-                    switch(steps) {
+                } else {
+                    switch (steps) {
                         case 1:
-                            if(name.equals("big have no")){
-                                soundId.setTextColor(Color.rgb(0,200,0));
+                            if (name.equals("big have no")) {
+                                soundId.setTextColor(Color.rgb(0, 200, 0));
                                 Toast.makeText(ListeningActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                                soundId.setTextColor(Color.rgb(255,255,255));
+                                soundId.setTextColor(Color.rgb(255, 255, 255));
                                 textView2.setText("Poslech - 2/5");
                                 soundId.setText("");
                                 steps++;
-                            }else {
-                                soundId.setTextColor(Color.rgb(200,0,0));
+                            } else {
+                                soundId.setTextColor(Color.rgb(200, 0, 0));
                                 Toast.makeText(ListeningActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                                if(localScore>0){localScore--;}
+                                if (localScore > 0) {
+                                    localScore--;
+                                }
                             }
 
 
                             break;
                         case 2:
-                            if(name.equals("can what where when how which than")){
-                                soundId.setTextColor(Color.rgb(0,200,0));
+                            if (name.equals("can what where when how which than")) {
+                                soundId.setTextColor(Color.rgb(0, 200, 0));
                                 Toast.makeText(ListeningActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                                soundId.setTextColor(Color.rgb(255,255,255));
+                                soundId.setTextColor(Color.rgb(255, 255, 255));
                                 textView2.setText("Poslech - 3/5");
                                 soundId.setText("");
                                 steps++;
-                            }else {
-                                soundId.setTextColor(Color.rgb(200,0,0));
+                            } else {
+                                soundId.setTextColor(Color.rgb(200, 0, 0));
                                 Toast.makeText(ListeningActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                                if(localScore>0){localScore--;}
+                                if (localScore > 0) {
+                                    localScore--;
+                                }
                             }
 
                             break;
                         case 3:
-                            if(name.equals("curly wavy straight round")){
-                                soundId.setTextColor(Color.rgb(0,200,0));
+                            if (name.equals("curly wavy straight round")) {
+                                soundId.setTextColor(Color.rgb(0, 200, 0));
                                 Toast.makeText(ListeningActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                                soundId.setTextColor(Color.rgb(255,255,255));
+                                soundId.setTextColor(Color.rgb(255, 255, 255));
                                 textView2.setText("Poslech - 4/5");
                                 soundId.setText("");
                                 steps++;
-                            }else {
-                                soundId.setTextColor(Color.rgb(200,0,0));
+                            } else {
+                                soundId.setTextColor(Color.rgb(200, 0, 0));
                                 Toast.makeText(ListeningActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                                if(localScore>0){localScore--;}
+                                if (localScore > 0) {
+                                    localScore--;
+                                }
                             }
 
 
                             break;
                         case 4:
-                            if(name.equals("name friend meet and who")){
-                                soundId.setTextColor(Color.rgb(0,200,0));
+                            if (name.equals("name friend meet and who")) {
+                                soundId.setTextColor(Color.rgb(0, 200, 0));
                                 Toast.makeText(ListeningActivity.this, "Spravne", Toast.LENGTH_SHORT).show();
-                                soundId.setTextColor(Color.rgb(255,255,255));
+                                soundId.setTextColor(Color.rgb(255, 255, 255));
                                 textView2.setText("Poslech - 5/5");
                                 soundId.setText("");
                                 steps++;
-                            }else {
-                                soundId.setTextColor(Color.rgb(200,0,0));
+                            } else {
+                                soundId.setTextColor(Color.rgb(200, 0, 0));
                                 Toast.makeText(ListeningActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                                if(localScore>0){localScore--;}
+                                if (localScore > 0) {
+                                    localScore--;
+                                }
                             }
 
                             break;
                         case 5:
-                            if(name.equals("what when where which wife")){
-                                soundId.setTextColor(Color.rgb(0,200,0));
+                            if (name.equals("what when where which wife")) {
+                                soundId.setTextColor(Color.rgb(0, 200, 0));
                                 Toast.makeText(ListeningActivity.this, "Hotovo", Toast.LENGTH_SHORT).show();
                                 complete = true;
-                            }else {
-                                soundId.setTextColor(Color.rgb(200,0,0));
+                            } else {
+                                soundId.setTextColor(Color.rgb(200, 0, 0));
                                 Toast.makeText(ListeningActivity.this, "Spatne", Toast.LENGTH_SHORT).show();
-                                if(localScore>0){localScore--;}
+                                if (localScore > 0) {
+                                    localScore--;
+                                }
                             }
                             break;
                     }
 
 
-            }
+                }
             }
         });
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
+        DatabaseReference myRefScore = database.getReference(uid + "scoreTotal");
         myRefScore.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -151,11 +162,13 @@ public class ListeningActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                 // tvTest.setText(value);
-                if (value!=null){
-                    valueScore = value;}else{
+                if (value != null) {
+                    valueScore = value;
+                } else {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    myRefScore.setValue("0");}
+                    DatabaseReference myRefScore = database.getReference(uid + "scoreTotal");
+                    myRefScore.setValue("0");
+                }
             }
 
             @Override
@@ -164,7 +177,7 @@ public class ListeningActivity extends AppCompatActivity {
                 Log.w("test", "Failed to read value.", error.toException());
             }
         });
-        DatabaseReference myRefScoreL = database.getReference(uid+"scoreListening");
+        DatabaseReference myRefScoreL = database.getReference(uid + "scoreListening");
         myRefScoreL.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -172,11 +185,13 @@ public class ListeningActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                 // tvTest.setText(value);
-                if (value!=null){
-                    valueScoreL = value;}else{
+                if (value != null) {
+                    valueScoreL = value;
+                } else {
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRefScore = database.getReference(uid+"scoreListening");
-                    myRefScore.setValue("0");}
+                    DatabaseReference myRefScore = database.getReference(uid + "scoreListening");
+                    myRefScore.setValue("0");
+                }
             }
 
             @Override
@@ -188,16 +203,16 @@ public class ListeningActivity extends AppCompatActivity {
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (complete){
+                if (complete) {
                     // Write a message to the database
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef = database.getReference(uid+"listening1");
+                    DatabaseReference myRef = database.getReference(uid + "listening1");
                     myRef.setValue("done");
-                    DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    int score = parseInt(valueScore)+localScore;
+                    DatabaseReference myRefScore = database.getReference(uid + "scoreTotal");
+                    int score = parseInt(valueScore) + localScore;
                     myRefScore.setValue(String.valueOf(score));
-                    DatabaseReference myRefScoreG = database.getReference(uid+"scoreListening");
-                    int scoreG = parseInt(valueScoreL)+localScore;
+                    DatabaseReference myRefScoreG = database.getReference(uid + "scoreListening");
+                    int scoreG = parseInt(valueScoreL) + localScore;
                     myRefScoreG.setValue(String.valueOf(scoreG));
 
                 }
@@ -231,7 +246,8 @@ public class ListeningActivity extends AppCompatActivity {
                         popupWindow.dismiss();
                         return true;
                     }
-                });}
+                });
+            }
 
         });
 
@@ -239,12 +255,11 @@ public class ListeningActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             uid = user.getUid();
-        }
-        else{
+        } else {
             uid = "error";
         }
 
-        DatabaseReference myRefTextSize = database.getReference(uid+"textSize");
+        DatabaseReference myRefTextSize = database.getReference(uid + "textSize");
         myRefTextSize.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -252,40 +267,43 @@ public class ListeningActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 Long value = dataSnapshot.getValue(Long.class);
                 // tvTest.setText(value);
-                if (value!=null){
-                    valueTextSize = value;} else {valueTextSize = 0L;}
-                if(valueTextSize==2131231004){
-                    soundId.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    start.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    stop.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                if (value != null) {
+                    valueTextSize = value;
+                } else {
+                    valueTextSize = 0L;
+                }
+                if (valueTextSize == 2131231004) {
+                    soundId.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    start.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    stop.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
 
                 }
-                if(valueTextSize==2131231005){
-                    soundId.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    start.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    stop.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                if (valueTextSize == 2131231005) {
+                    soundId.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    start.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    stop.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
 
 
                 }
-                if(valueTextSize==2131231006){
-                    soundId.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    start.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    stop.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                if (valueTextSize == 2131231006) {
+                    soundId.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnCheck.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    start.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    stop.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    textView2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
 
                 }
             }
@@ -299,7 +317,7 @@ public class ListeningActivity extends AppCompatActivity {
     }
 
     public void startSound(View v) {
-        switch(steps) {
+        switch (steps) {
             case 1:
                 mp = MediaPlayer.create(v.getContext(), R.raw.audio_1);
                 mp.start();
@@ -323,8 +341,9 @@ public class ListeningActivity extends AppCompatActivity {
         }
 
     }
+
     public void stopSound(View v) {
-        switch(steps) {
+        switch (steps) {
             case 1:
                 mp = MediaPlayer.create(v.getContext(), R.raw.audio_1);
                 mp.stop();

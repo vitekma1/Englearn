@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LearningActivity"
-    android:background="@drawable/p3">
+    android:background="@drawable/p3"
+    tools:context=".LearningActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -307,6 +307,7 @@
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
+
                 <Button
                     android:id="@+id/start2"
                     android:layout_width="match_parent"
@@ -317,18 +318,20 @@
                     android:onClick="startSound2"
                     android:text="Přehrát"
                     android:textSize="25sp" />
+
                 <TextView
                     android:id="@+id/tvListening3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="30dp"
                     android:text="Nahrávka 3 - curly wavy straight round (kudrnatý vlnitý rovný kulatý)"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
+
                 <Button
                     android:id="@+id/start3"
                     android:layout_width="match_parent"
@@ -339,18 +342,20 @@
                     android:onClick="startSound3"
                     android:text="Přehrát"
                     android:textSize="25sp" />
+
                 <TextView
                     android:id="@+id/tvListening4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="30dp"
                     android:text="Nahrávka 4 - name friend meet and who (jméno přítel setkat a kdo)"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
+
                 <Button
                     android:id="@+id/start4"
                     android:layout_width="match_parent"
@@ -361,18 +366,20 @@
                     android:onClick="startSound4"
                     android:text="Přehrát"
                     android:textSize="25sp" />
+
                 <TextView
                     android:id="@+id/tvListening5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
                     android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="30dp"
                     android:text="Nahrávka 5 - what when where which wife (co kdy kde která manželka)"
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
+
                 <Button
                     android:id="@+id/start5"
                     android:layout_width="match_parent"
@@ -383,6 +390,7 @@
                     android:onClick="startSound5"
                     android:text="Přehrát"
                     android:textSize="25sp" />
+
                 <TextView
                     android:id="@+id/tvSpeaking"
                     android:layout_width="wrap_content"
@@ -416,26 +424,31 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/fonetic" />
+
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/fo1" />
+
                 <ImageView
                     android:id="@+id/imageView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/fo2" />
+
                 <ImageView
                     android:id="@+id/imageView6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/fo3" />
+
                 <ImageView
                     android:id="@+id/imageView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/fo4" />
+
                 <ImageView
                     android:id="@+id/imageView8"
                     android:layout_width="match_parent"
@@ -455,6 +468,7 @@
                     android:textAlignment="center"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
+
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"

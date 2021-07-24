@@ -1,8 +1,5 @@
 package com.englearn;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -19,6 +16,9 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -30,8 +30,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
-
-import static java.lang.Integer.parseInt;
 
 public class RecognizeActivity extends AppCompatActivity {
     TextView tvResult, tvTask, tvHeadline;
@@ -53,16 +51,6 @@ public class RecognizeActivity extends AppCompatActivity {
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*if (complete){
-                    // Write a message to the database
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef = database.getReference(uid+"animals1");
-                    myRef.setValue("done");
-                    DatabaseReference myRefScore = database.getReference(uid+"scoreTotal");
-                    int score = parseInt(valueScore)+100;
-                    myRefScore.setValue(String.valueOf(score));
-
-                }*/
                 startActivity(new Intent(RecognizeActivity.this, HomeActivity.class));
                 finish();
             }

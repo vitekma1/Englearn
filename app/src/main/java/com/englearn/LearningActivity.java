@@ -1,7 +1,5 @@
 package com.englearn;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -16,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,17 +26,18 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LearningActivity extends AppCompatActivity {
     private Long valueTextSize;
-    private Button btnMenu,btnPopUp;
-    private TextView tvTask, tvSentence,tvSentence2,tvSentence3,tvSentence4,tvSentence5,tvSentence6,tvSentence7,tvSentence8,tvSentence9,
-            tvSentence10,tvSentence11,tvSentence12,tvSentence13,tvSentence14,tvSentence15,tvTimes, tvListening, tvListening1, tvListening2, tvListening3,
-    tvListening4, tvListening5, tvSpeaking, tvSpeaking2, tvSpeaking3, tvSentence156;
+    private Button btnMenu, btnPopUp;
+    private TextView tvTask, tvSentence, tvSentence2, tvSentence3, tvSentence4, tvSentence5, tvSentence6, tvSentence7, tvSentence8, tvSentence9,
+            tvSentence10, tvSentence11, tvSentence12, tvSentence13, tvSentence14, tvSentence15, tvTimes, tvListening, tvListening1, tvListening2, tvListening3,
+            tvListening4, tvListening5, tvSpeaking, tvSpeaking2, tvSpeaking3, tvSentence156;
     private String uid;
     MediaPlayer mp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learning);
-        btnMenu = (Button)findViewById(R.id.btnMenu);
+        btnMenu = (Button) findViewById(R.id.btnMenu);
         tvTask = findViewById(R.id.tvTask);
         tvSentence156 = findViewById(R.id.tvSentence156);
         tvSentence = findViewById(R.id.tvSentence);
@@ -98,19 +99,19 @@ public class LearningActivity extends AppCompatActivity {
                         popupWindow.dismiss();
                         return true;
                     }
-                });}
+                });
+            }
 
         });
         //ziskani emailu a id prihlaseneho uzivatele
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             uid = user.getUid();
-        }
-        else{
+        } else {
             uid = "error";
         }
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRefTextSize = database.getReference(uid+"textSize");
+        DatabaseReference myRefTextSize = database.getReference(uid + "textSize");
         myRefTextSize.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -118,101 +119,104 @@ public class LearningActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 Long value = dataSnapshot.getValue(Long.class);
                 // tvTest.setText(value);
-                if (value!=null){
-                    valueTextSize = value;} else {valueTextSize = 0L;}
-                if(valueTextSize==2131231004){
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence3.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence4.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence5.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence6.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence7.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence8.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence9.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence10.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence11.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence12.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence13.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence14.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence15.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvTimes.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvListening.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvListening1.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvListening2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvListening3.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvListening4.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvListening5.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSpeaking.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSpeaking2.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSpeaking3.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
-                    tvSentence156.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
+                if (value != null) {
+                    valueTextSize = value;
+                } else {
+                    valueTextSize = 0L;
+                }
+                if (valueTextSize == 2131231004) {
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence5.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence6.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence7.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence8.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence9.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence10.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence11.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence12.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence13.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence14.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence15.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvTimes.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvListening.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvListening1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvListening2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvListening3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvListening4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvListening5.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSpeaking.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSpeaking2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSpeaking3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    tvSentence156.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
 
                 }
-                if(valueTextSize==2131231005){
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence3.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence4.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence5.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence6.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence7.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence8.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence9.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence10.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence11.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence12.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence13.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence14.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence15.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvTimes.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvListening.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvListening1.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvListening2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvListening3.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvListening4.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvListening5.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSpeaking.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSpeaking2.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSpeaking3.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
-                    tvSentence156.setTextSize(TypedValue.COMPLEX_UNIT_SP,25);
+                if (valueTextSize == 2131231005) {
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence5.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence6.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence7.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence8.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence9.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence10.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence11.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence12.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence13.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence14.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence15.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvTimes.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvListening.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvListening1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvListening2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvListening3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvListening4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvListening5.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSpeaking.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSpeaking2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSpeaking3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
+                    tvSentence156.setTextSize(TypedValue.COMPLEX_UNIT_SP, 25);
                 }
-                if(valueTextSize==2131231006){
-                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence3.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence4.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence5.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence6.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence7.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence8.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence9.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence10.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence11.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence12.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence13.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence14.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence15.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvTimes.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvListening.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvListening1.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvListening2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvListening3.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvListening4.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvListening5.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSpeaking.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSpeaking2.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSpeaking3.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
-                    tvSentence156.setTextSize(TypedValue.COMPLEX_UNIT_SP,35);
+                if (valueTextSize == 2131231006) {
+                    btnPopUp.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    btnMenu.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvTask.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence5.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence6.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence7.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence8.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence9.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence10.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence11.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence12.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence13.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence14.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence15.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvTimes.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvListening.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvListening1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvListening2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvListening3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvListening4.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvListening5.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSpeaking.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSpeaking2.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSpeaking3.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+                    tvSentence156.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
                 }
             }
 
@@ -228,25 +232,29 @@ public class LearningActivity extends AppCompatActivity {
         mp = MediaPlayer.create(v.getContext(), R.raw.audio_1);
         mp.start();
 
-        }
+    }
+
     public void startSound2(View v) {
         mp = MediaPlayer.create(v.getContext(), R.raw.audio_2);
         mp.start();
     }
+
     public void startSound3(View v) {
         mp = MediaPlayer.create(v.getContext(), R.raw.audio_3);
         mp.start();
     }
+
     public void startSound4(View v) {
         mp = MediaPlayer.create(v.getContext(), R.raw.audio_4);
         mp.start();
     }
+
     public void startSound5(View v) {
         mp = MediaPlayer.create(v.getContext(), R.raw.audio_5);
         mp.start();
 
     }
 
-    }
+}
 
 

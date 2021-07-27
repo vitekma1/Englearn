@@ -103,7 +103,7 @@
                     android:background="@drawable/menu_button"
                     android:fontFamily="sans-serif-black"
                     android:padding="12dp"
-                    android:text="Mluvení"
+                    android:text="Výslovnost"
                     android:textAlignment="center"
                     android:textSize="24dp" />
 
